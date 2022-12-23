@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cb0yt8vf1j6ih"]
+[gd_scene load_steps=3 format=3 uid="uid://dye0n65vm5gbc"]
 
 [ext_resource type="AudioStream" uid="uid://bsegqbq876jca" path="res://core/resource/sound/jump.wav" id="1"]
-[ext_resource type="Script" path="res://core/scene/SoundPlayer.gd" id="2"]
+[ext_resource type="Script" path="res://core/script/SoundPlayer.gd" id="1_kkitk"]
 
 [node name="SoundPlayer" type="Node"]
-script = ExtResource("2")
+script = ExtResource("1_kkitk")
 
 [node name="AudioPlayers" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://di400b50igwak"]
+[gd_scene load_steps=16 format=3 uid="uid://c60xc6r4miqt1"]
 
 [ext_resource type="Script" path="res://core/script/state_machine/state_manager.gd" id="1_l7a2c"]
 [ext_resource type="Script" path="res://core/script/state_machine/base_state.gd" id="2_yosrq"]
@@ -25,15 +25,12 @@ script = ExtResource("2_yosrq")
 
 [node name="idle" type="Node" parent="base"]
 script = ExtResource("3_wla5f")
-animation_name = "idel"
 
 [node name="jump" type="Node" parent="base"]
 script = ExtResource("4_kjkin")
-animation_name = "jump"
 
 [node name="double_jump" type="Node" parent="base/jump"]
 script = ExtResource("5_grx31")
-animation_name = "double_jump"
 
 [node name="ground" type="Node" parent="base"]
 script = ExtResource("6_pa4xx")
@@ -46,11 +43,9 @@ script = ExtResource("8_368pa")
 
 [node name="dash" type="Node" parent="base/ground"]
 script = ExtResource("9_bjyqt")
-animation_name = null
 
 [node name="air" type="Node" parent="base"]
 script = ExtResource("10_g44dw")
-animation_name = null
 
 [node name="lift" type="Node" parent="base/air"]
 script = ExtResource("11_mjku3")
@@ -60,7 +55,6 @@ script = ExtResource("12_uupi7")
 
 [node name="landing" type="Node" parent="base/air"]
 script = ExtResource("13_jlkja")
-animation_name = null
 
 [node name="interactive" type="Node" parent="base"]
 script = ExtResource("14_x432g")

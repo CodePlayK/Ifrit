@@ -1,6 +1,6 @@
 [gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://d3c3is0uf76yd"]
 
-[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_rj1uh"]
+[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_xhowb"]
 resource_name = "StereoEnhance"
 
 [resource]
@@ -17,5 +17,5 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
-bus/2/effect/0/effect = SubResource("AudioEffectStereoEnhance_rj1uh")
+bus/2/effect/0/effect = SubResource("AudioEffectStereoEnhance_xhowb")
 bus/2/effect/0/enabled = true
