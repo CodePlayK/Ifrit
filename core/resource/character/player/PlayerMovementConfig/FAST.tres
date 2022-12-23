@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://core/resource/character/player/PlayerMovementConfig/PlayerMoveConfig_fast.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+gravity = 6
+max_gravity = 400
+acceleration = 20
+friction = 15
+max_speed = 202
+jump_speed = -170
+fast_fall_threshold = 10
+fast_fall_acceleration = 5
+climb_speed = 150

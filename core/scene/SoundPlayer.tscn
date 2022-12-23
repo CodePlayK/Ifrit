@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb0yt8vf1j6ih"]
+
+[ext_resource type="AudioStream" uid="uid://bsegqbq876jca" path="res://core/resource/sound/jump.wav" id="1"]
+[ext_resource type="Script" path="res://core/scene/SoundPlayer.gd" id="2"]
+
+[node name="SoundPlayer" type="Node"]
+script = ExtResource("2")
+
+[node name="AudioPlayers" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource("1")
+bus = &"sound"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource("1")
+bus = &"sound"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource("1")
+bus = &"sound"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="AudioPlayers"]
+stream = ExtResource("1")
+bus = &"sound"

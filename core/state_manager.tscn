@@ -1,0 +1,69 @@
+[gd_scene load_steps=16 format=3 uid="uid://di400b50igwak"]
+
+[ext_resource type="Script" path="res://core/script/state_machine/state_manager.gd" id="1_l7a2c"]
+[ext_resource type="Script" path="res://core/script/state_machine/base_state.gd" id="2_yosrq"]
+[ext_resource type="Script" path="res://core/script/state_machine/idle.gd" id="3_wla5f"]
+[ext_resource type="Script" path="res://core/script/state_machine/jump.gd" id="4_kjkin"]
+[ext_resource type="Script" path="res://core/script/state_machine/double_jump.gd" id="5_grx31"]
+[ext_resource type="Script" path="res://core/script/state_machine/ground.gd" id="6_pa4xx"]
+[ext_resource type="Script" path="res://core/script/state_machine/walk.gd" id="7_ic6fy"]
+[ext_resource type="Script" path="res://core/script/state_machine/run.gd" id="8_368pa"]
+[ext_resource type="Script" path="res://core/script/state_machine/dash.gd" id="9_bjyqt"]
+[ext_resource type="Script" path="res://core/script/state_machine/air.gd" id="10_g44dw"]
+[ext_resource type="Script" path="res://core/script/state_machine/lift.gd" id="11_mjku3"]
+[ext_resource type="Script" path="res://core/script/state_machine/fall.gd" id="12_uupi7"]
+[ext_resource type="Script" path="res://core/script/state_machine/landing.gd" id="13_jlkja"]
+[ext_resource type="Script" path="res://core/script/state_machine/interactive.gd" id="14_x432g"]
+[ext_resource type="Script" path="res://core/script/state_machine/climb.gd" id="15_084gn"]
+
+[node name="state_manager" type="Node" node_paths=PackedStringArray("starting_node")]
+script = ExtResource("1_l7a2c")
+starting_node = NodePath("base/air/lift")
+
+[node name="base" type="Node" parent="."]
+script = ExtResource("2_yosrq")
+
+[node name="idle" type="Node" parent="base"]
+script = ExtResource("3_wla5f")
+animation_name = "idel"
+
+[node name="jump" type="Node" parent="base"]
+script = ExtResource("4_kjkin")
+animation_name = "jump"
+
+[node name="double_jump" type="Node" parent="base/jump"]
+script = ExtResource("5_grx31")
+animation_name = "double_jump"
+
+[node name="ground" type="Node" parent="base"]
+script = ExtResource("6_pa4xx")
+
+[node name="walk" type="Node" parent="base/ground"]
+script = ExtResource("7_ic6fy")
+
+[node name="run" type="Node" parent="base/ground"]
+script = ExtResource("8_368pa")
+
+[node name="dash" type="Node" parent="base/ground"]
+script = ExtResource("9_bjyqt")
+animation_name = null
+
+[node name="air" type="Node" parent="base"]
+script = ExtResource("10_g44dw")
+animation_name = null
+
+[node name="lift" type="Node" parent="base/air"]
+script = ExtResource("11_mjku3")
+
+[node name="fall" type="Node" parent="base/air"]
+script = ExtResource("12_uupi7")
+
+[node name="landing" type="Node" parent="base/air"]
+script = ExtResource("13_jlkja")
+animation_name = null
+
+[node name="interactive" type="Node" parent="base"]
+script = ExtResource("14_x432g")
+
+[node name="climb" type="Node" parent="base/interactive"]
+script = ExtResource("15_084gn")

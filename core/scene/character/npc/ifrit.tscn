@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlaktb0hsbvh"]
+
+[ext_resource type="Texture2D" uid="uid://co8cv7qnmlqkp" path="res://core/resource/character/characters_packed.png" id="1_bt674"]
+[ext_resource type="Script" path="res://core/script/character/npc/ifrit.gd" id="1_h5cg2"]
+[ext_resource type="PackedScene" uid="uid://b361p61jmf257" path="res://core/scene/small_example_balloon.tscn" id="3_etrwm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj1rt"]
+atlas = ExtResource("1_bt674")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aw8uc"]
+animations = [{
+"frames": [SubResource("AtlasTexture_fj1rt")],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k202"]
+size = Vector2(20, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7n4ay"]
+size = Vector2(60, 2)
+
+[node name="ifrit" type="CharacterBody2D"]
+script = ExtResource("1_h5cg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+frames = SubResource("SpriteFrames_aw8uc")
+animation = &"idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11.5)
+shape = SubResource("RectangleShape2D_5k202")
+
+[node name="Balloon" parent="." instance=ExtResource("3_etrwm")]
+
+[node name="PlayerChecker" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerChecker"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_7n4ay")
+
+[connection signal="tree_exited" from="Balloon" to="." method="_on_balloon_tree_exited"]
+[connection signal="body_entered" from="PlayerChecker" to="." method="_on_player_checker_body_entered"]
+[connection signal="body_exited" from="PlayerChecker" to="." method="_on_player_checker_body_exited"]

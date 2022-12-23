@@ -1,0 +1,140 @@
+[gd_scene load_steps=21 format=3 uid="uid://d1wfux376uoqb"]
+
+[ext_resource type="SpriteFrames" uid="uid://cswephwqgsgfl" path="res://core/resource/character/player/Player_Skin_Blue.tres" id="1"]
+[ext_resource type="Script" path="res://core/script/character/player/Player.gd" id="2"]
+[ext_resource type="Script" path="res://core/script/character/player/EnvironmentKillRayChecker.gd" id="4"]
+[ext_resource type="Script" path="res://core/script/state_machine/state_manager.gd" id="5_yt7lt"]
+[ext_resource type="Script" path="res://core/script/state_machine/base_state.gd" id="6_7pqdi"]
+[ext_resource type="Script" path="res://core/script/state_machine/idle.gd" id="7_4cncj"]
+[ext_resource type="Script" path="res://core/script/state_machine/jump.gd" id="8_xlsxj"]
+[ext_resource type="Script" path="res://core/script/state_machine/double_jump.gd" id="9_2p5bd"]
+[ext_resource type="Script" path="res://core/script/state_machine/ground.gd" id="10_56yjd"]
+[ext_resource type="Script" path="res://core/script/state_machine/walk.gd" id="11_ywp8i"]
+[ext_resource type="Script" path="res://core/script/state_machine/run.gd" id="12_uvdwv"]
+[ext_resource type="Script" path="res://core/script/state_machine/dash.gd" id="13_2p0qv"]
+[ext_resource type="Script" path="res://core/script/state_machine/air.gd" id="14_c8u57"]
+[ext_resource type="Script" path="res://core/script/state_machine/lift.gd" id="15_4m85f"]
+[ext_resource type="Script" path="res://core/script/state_machine/fall.gd" id="16_45stq"]
+[ext_resource type="Script" path="res://core/script/state_machine/landing.gd" id="17_vufe7"]
+[ext_resource type="Script" path="res://core/script/state_machine/interactive.gd" id="18_g7g66"]
+[ext_resource type="Script" path="res://core/script/state_machine/climb.gd" id="19_yiict"]
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(31, 71)
+
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(10, 16.5)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(80, -14)
+scale = Vector2(0.9, 0.9)
+collision_layer = 2
+script = ExtResource("2")
+gravity = 400
+max_gravity = 612
+acceleration_run = 400
+friction = 1200
+max_speed_run = 343
+max_speed_walk = 70
+jump_speed = 189
+climb_speed = 120
+min_jump_fource = 70
+fast_fall_threshold = 100
+fast_fall_acceleration = 200
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 3
+z_index = 4
+position = Vector2(0, -51)
+frames = ExtResource("1")
+animation = &"idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -22.5)
+shape = SubResource("3")
+
+[node name="ladderCheck" type="RayCast2D" parent="."]
+position = Vector2(0, -8)
+target_position = Vector2(0, 21)
+collision_mask = 4
+
+[node name="JumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="EdgeJumpTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="EnvironmentKillRayChecker" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 264
+script = ExtResource("4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnvironmentKillRayChecker"]
+position = Vector2(0, 3.75)
+shape = SubResource("6")
+
+[node name="state_manager" type="Node" parent="." node_paths=PackedStringArray("starting_node")]
+script = ExtResource("5_yt7lt")
+starting_node = NodePath("base/air/lift")
+state_machine_sript_path = "res://core/script/state_machine/"
+
+[node name="base" type="Node" parent="state_manager"]
+script = ExtResource("6_7pqdi")
+
+[node name="idle" type="Node" parent="state_manager/base"]
+script = ExtResource("7_4cncj")
+
+[node name="jump" type="Node" parent="state_manager/base"]
+script = ExtResource("8_xlsxj")
+
+[node name="double_jump" type="Node" parent="state_manager/base/jump"]
+script = ExtResource("9_2p5bd")
+
+[node name="ground" type="Node" parent="state_manager/base"]
+script = ExtResource("10_56yjd")
+
+[node name="walk" type="Node" parent="state_manager/base/ground"]
+script = ExtResource("11_ywp8i")
+
+[node name="run" type="Node" parent="state_manager/base/ground"]
+script = ExtResource("12_uvdwv")
+
+[node name="dash" type="Node" parent="state_manager/base/ground"]
+script = ExtResource("13_2p0qv")
+dash_time = 0.2
+
+[node name="air" type="Node" parent="state_manager/base"]
+script = ExtResource("14_c8u57")
+
+[node name="lift" type="Node" parent="state_manager/base/air"]
+script = ExtResource("15_4m85f")
+
+[node name="fall" type="Node" parent="state_manager/base/air"]
+script = ExtResource("16_45stq")
+
+[node name="landing" type="Node" parent="state_manager/base/air"]
+script = ExtResource("17_vufe7")
+
+[node name="interactive" type="Node" parent="state_manager/base"]
+script = ExtResource("18_g7g66")
+
+[node name="climb" type="Node" parent="state_manager/base/interactive"]
+script = ExtResource("19_yiict")
+
+[node name="blockCheckerLeft" type="RayCast2D" parent="."]
+rotation = 1.5708
+target_position = Vector2(7.60198e-05, 21)
+
+[node name="blockCheckerRight" type="RayCast2D" parent="."]
+rotation = -1.5708
+target_position = Vector2(-6.87798e-05, 19)
+
+[connection signal="timeout" from="JumpBufferTimer" to="." method="_on_JumpBufferTimer_timeout"]
+[connection signal="timeout" from="EdgeJumpTimer" to="." method="_on_EdgeJumpTimer_timeout"]
+[connection signal="area_entered" from="EnvironmentKillRayChecker" to="EnvironmentKillRayChecker" method="_on_EnvironmentKillRayChecker_area_entered"]
+[connection signal="body_entered" from="EnvironmentKillRayChecker" to="EnvironmentKillRayChecker" method="_on_EnvironmentKillRayChecker_body_entered"]
+[connection signal="change_state_ui" from="state_manager" to="state_manager" method="_on_change_state_ui" flags=18]
