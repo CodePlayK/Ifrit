@@ -26,15 +26,12 @@ script = ExtResource("2_ikvjp")
 
 [node name="idle" type="Node" parent="base"]
 script = ExtResource("3_kwom2")
-animation_name = "idel"
 
 [node name="jump" type="Node" parent="base"]
 script = ExtResource("4_j7vad")
-animation_name = "jump"
 
 [node name="double_jump" type="Node" parent="base/jump"]
 script = ExtResource("5_vp3aq")
-animation_name = "double_jump"
 
 [node name="ground" type="Node" parent="base"]
 script = ExtResource("6_lici0")
@@ -48,11 +45,9 @@ script = ExtResource("8_wju3x")
 [node name="dash" type="Node" parent="base/ground"]
 script = ExtResource("9_v67i0")
 dash_time = 0.2
-animation_name = "dash"
 
 [node name="air" type="Node" parent="base"]
 script = ExtResource("10_pi2oq")
-animation_name = null
 
 [node name="lift" type="Node" parent="base/air"]
 script = ExtResource("11_ejsqp")
@@ -62,7 +57,6 @@ script = ExtResource("12_1aq3a")
 
 [node name="landing" type="Node" parent="base/air"]
 script = ExtResource("13_vxdta")
-animation_name = null
 
 [node name="interactive" type="Node" parent="base"]
 script = ExtResource("14_wsokn")

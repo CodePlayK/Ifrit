@@ -16,8 +16,10 @@ func _ready() -> void:
 	EventBus.connect("change_background_light",Callable(self,"_on_change_background_light"))
 	EventBus.connect("change_bathroom_light_enegy",Callable(self,"_on_change_bathroom_light_enegy"))
 	EventBus.connect("change_worldEnvironment_exposure_white",Callable(self,"_on_change_worldEnvironment_exposure_white"))
-
-	pass # Replace with function body.
+	if day_light:
+		on_daylight()
+	else :
+		on_nightlight()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,3 +40,14 @@ func _on_change_bathroom_light_enegy(state):
 	emit_signal("change_bathroom_light_enegy",state)
 func _on_change_worldEnvironment_exposure_white(expose,white):
 	emit_signal("change_worldEnvironment_exposure_white",expose,white)
+
+func on_daylight():
+	emit_signal("change_main_light",true)
+	emit_signal("change_sleep_light",false)
+	emit_signal("change_logo_light",false)
+	emit_signal("change_desk_light",false)
+func on_nightlight():
+	emit_signal("change_desk_light",true)
+	emit_signal("change_main_light",false)
+	emit_signal("change_sleep_light",true)
+	emit_signal("change_logo_light",true)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://dieur2hbecxb3"]
 
 [ext_resource type="Script" path="res://core/script/world/world.gd" id="1"]
-[ext_resource type="PackedScene" path="res://core/scene/character/enemy/FlyingEnemy.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://djiwbdylba3k0" path="res://core/scene/character/enemy/FlyingEnemy.tscn" id="3"]
 [ext_resource type="Script" path="res://core/scene/world/Level1.gd" id="3_q75mt"]
 [ext_resource type="PackedScene" uid="uid://d1wfux376uoqb" path="res://core/scene/character/player/Player.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://24e1pf3cu608" path="res://core/scene/HitBox.tscn" id="6"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bpkljuf4di3bv" path="res://core/scene/world/EnvironmentKill.tscn" id="9"]
 [ext_resource type="PackedScene" uid="uid://c1gg7p5jyogfq" path="res://core/scene/character/enemy/path/path1.tscn" id="10"]
 [ext_resource type="PackedScene" uid="uid://cdwl2u5dayeni" path="res://core/scene/world/ladder.tscn" id="10_s10cr"]
-[ext_resource type="PackedScene" uid="uid://cb0yt8vf1j6ih" path="res://core/scene/SoundPlayer.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://dye0n65vm5gbc" path="res://core/scene/SoundPlayer.tscn" id="11"]
 [ext_resource type="PackedScene" uid="uid://dlaktb0hsbvh" path="res://core/scene/character/npc/ifrit.tscn" id="11_2buy7"]
 [ext_resource type="PackedScene" uid="uid://pt01u81xigg3" path="res://core/resource/world/bedroom/bedroom.tscn" id="13_m38jm"]
 

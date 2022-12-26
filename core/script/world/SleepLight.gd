@@ -1,7 +1,7 @@
 extends Area2D
 @onready var resource=preload("res://core/dialog/test1.dialogue")
 @onready var balloon=$"%Balloon"
-@onready var sleepLight=$"Sprite2D/SleepLight"
+@onready var sleepLight=$"SleepLight"
 var on_player:bool=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

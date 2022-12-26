@@ -19,7 +19,7 @@ var player_last_position_x:int=0
 var player_last_position_x_float:float=0.0
 var player_position_x:int=0
 var start_position_x:Array[float]
-@export var parallax_limit:=2000
+@export var parallax_limit:=25000
 var add_position_x=0
 
 
