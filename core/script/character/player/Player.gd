@@ -20,6 +20,7 @@ extends CharacterBody2D
 var start_position
 
 @onready var animations: = $AnimatedSprite2D
+@onready var reflection: = $Reflection
 @onready var states: = $state_manager
 @onready var ladderChecker:=$ladderCheck
 @onready var blockCheckerLeft:=$blockCheckerLeft
@@ -29,6 +30,7 @@ var start_position
 func _ready() -> void:
 	start_position=get_position()
 	states.init(self)
+	reflection.hide()
 	# Initialize the state machine, passing a reference of the player to the states,
 	# that way they can move and react accordingly
 
@@ -59,4 +61,14 @@ func player_is_dead():
 		set_position(start_position)
 
 func _on_world_change_state_ui():
+	pass # Replace with function body.
+
+
+func _on_bedroom_player_enter_bathroom() -> void:
+	reflection.show()
+	pass # Replace with function body.
+
+
+func _on_bedroom_player_leave_bathroom() -> void:
+	reflection.hide()
 	pass # Replace with function body.

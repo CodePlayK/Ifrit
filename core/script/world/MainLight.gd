@@ -35,8 +35,10 @@ func _on_bedroom_change_main_light(state) -> void:
 func _on_visibility_changed() -> void:
 	if !visible:
 		EventBus.emit_signal("change_worldEnvironment_exposure_white",2.7,2.7)
+		EventBus.emit_signal("change_mirror_mix_value",2.2)
 	else:
 		EventBus.emit_signal("change_worldEnvironment_exposure_white",0.6,0.6)
+		EventBus.emit_signal("change_mirror_mix_value",1.8)
 	EventBus.emit_signal("change_logo_light",!visible)
 	EventBus.emit_signal("change_desk_light",!visible)
 	EventBus.emit_signal("change_background_light",visible)

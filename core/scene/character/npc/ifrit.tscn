@@ -2,19 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://co8cv7qnmlqkp" path="res://core/resource/character/characters_packed.png" id="1_bt674"]
 [ext_resource type="Script" path="res://core/script/character/npc/ifrit.gd" id="1_h5cg2"]
+[ext_resource type="Shader" path="res://TEST/OUTLINE.gdshader" id="2_osrb7"]
 [ext_resource type="PackedScene" uid="uid://b361p61jmf257" path="res://core/scene/small_example_balloon.tscn" id="3_etrwm"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fj1rt"]
-atlas = ExtResource("1_bt674")
-region = Rect2(144, 0, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_aw8uc"]
-animations = [{
-"frames": [SubResource("AtlasTexture_fj1rt")],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_umgwc"]
+shader = ExtResource("2_osrb7")
+shader_parameter/line_color = Quaternion(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5k202"]
 size = Vector2(20, 23)
@@ -25,13 +19,15 @@ size = Vector2(60, 2)
 [node name="ifrit" type="CharacterBody2D"]
 script = ExtResource("1_h5cg2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_umgwc")
 position = Vector2(0, -12)
-frames = SubResource("SpriteFrames_aw8uc")
-animation = &"idle"
-playing = true
+texture = ExtResource("1_bt674")
+region_enabled = true
+region_rect = Rect2(145, -1, 22, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, -11.5)
 shape = SubResource("RectangleShape2D_5k202")
 

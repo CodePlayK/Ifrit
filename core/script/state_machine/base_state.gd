@@ -38,7 +38,7 @@ func inite(all_states) -> void:
 		if "interactive"==state_name:interactive_state=state
 #进入该状态的方法，每次进入都会执行，在pre_physics_process之前进行
 func enter() -> void:
-	player.animations.play(self.get_name())
+	play_animation()
 #退出该状态的方法，每次进入都会执行，在physics_process之后进行
 func exit() -> void:
 	pass
@@ -65,8 +65,10 @@ func after_physics_process(delta: float)->BaseState:
 func player_faced(move):
 	if move < 0:
 		player.animations.flip_h = false
+		player.reflection.flip_h = false
 	elif move > 0:
 		player.animations.flip_h = true
+		player.reflection.flip_h = true
 func apply_gravity(delta):
 	player.velocity.y+=player.gravity*delta
 	player.velocity.y=min(player.velocity.y,player.max_gravity)
@@ -120,3 +122,6 @@ func is_player_blocked()->bool:
 	if player.blockCheckerRight.is_colliding() or player.blockCheckerLeft.is_colliding():
 		return true
 	return false
+func play_animation():
+	player.animations.play(self.get_name())
+	player.reflection.play(self.get_name())

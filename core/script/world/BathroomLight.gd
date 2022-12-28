@@ -19,7 +19,7 @@ func _on_bedroom_change_bathroom_light_enegy(state) -> void:
 	if state:
 		energy=1.4
 	else :
-		energy=1.1
+		energy=1.2
 	pass # Replace with function body.
 
 
@@ -32,4 +32,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	balloon.hide()
 	on_player=false
+	pass # Replace with function body.
+
+
+func _on_visibility_changed() -> void:
+	EventBus.emit_signal("change_mirror",visible)
 	pass # Replace with function body.

@@ -16,5 +16,5 @@ func _on_bedroom_change_background_light(state) -> void:
 		animator.play()
 	else:
 		animator.stop()
-		energy=0.05
+		energy=0.1
 	pass # Replace with function body.
