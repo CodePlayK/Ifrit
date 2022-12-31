@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dg55qkcg0sfxg"]
+
+[ext_resource type="Shader" path="res://shader/outline_orange.gdshader" id="1_mhvit"]
+
+[resource]
+shader = ExtResource("1_mhvit")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.7
