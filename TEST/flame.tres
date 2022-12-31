@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://5t6wflv1bors"]
+
+[ext_resource type="Shader" path="res://shader/flame_burst.gdshader" id="1_dhhwt"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_dhhwt")
+shader_parameter/wave_speed = 1.0
+shader_parameter/line = 0.0
+shader_parameter/time = 0.0
+shader_parameter/color = Color(1, 1, 1, 1)

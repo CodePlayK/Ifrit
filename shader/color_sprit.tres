@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://p3wih42vko5h"]
+
+[ext_resource type="Shader" path="res://shader/color_sprit.gdshader" id="1_m0rql"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_m0rql")
+shader_parameter/color = Color(0, 0, 0, 0.839216)

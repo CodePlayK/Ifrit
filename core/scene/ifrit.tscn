@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://kc7g2j65ee8n"]
+
+[ext_resource type="PackedScene" uid="uid://tc337u8xjr1i" path="res://core/scene/world/bedroom.tscn" id="1_e1gia"]
+
+[node name="iFRIt" type="Node"]
+
+[node name="Bedroom" parent="." instance=ExtResource("1_e1gia")]

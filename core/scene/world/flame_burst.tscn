@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8ekbvjprkyld"]
+
+[ext_resource type="Script" path="res://TEST/flame.gd" id="1_1reo0"]
+[ext_resource type="Material" uid="uid://5t6wflv1bors" path="res://TEST/flame.tres" id="2_tx2eo"]
+[ext_resource type="Texture2D" uid="uid://c2juekayf38d4" path="res://core/resource/world/trainingroom/wave_texture-export.png" id="3_bucpn"]
+
+[node name="Flame_Burst" type="Node2D"]
+script = ExtResource("1_1reo0")
+
+[node name="sprit" type="Sprite2D" parent="."]
+material = ExtResource("2_tx2eo")
+scale = Vector2(2, 2)
+texture = ExtResource("3_bucpn")
+offset = Vector2(0, -9.01591)

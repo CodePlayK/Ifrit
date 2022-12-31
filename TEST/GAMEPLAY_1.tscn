@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://w7yo7tbj7nqj"]
+
+[ext_resource type="Script" path="res://TEST/GAMEPLAY.gd" id="1_26wxw"]
+[ext_resource type="Material" uid="uid://p3wih42vko5h" path="res://shader/color_sprit.tres" id="2_pdtui"]
+[ext_resource type="Texture2D" uid="uid://c3egy4uov3514" path="res://core/resource/world/trainingroom/trainingroom.png" id="3_qjy34"]
+[ext_resource type="Texture2D" uid="uid://dq055twme5bss" path="res://core/resource/world/trainingroom/BACKGROUND.png" id="4_m7o8p"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ewd68"]
+a = Vector2(0, -36.36)
+b = Vector2(0, 36.36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h700a"]
+size = Vector2(20, 50.5)
+
+[node name="GamePlay" type="Node2D"]
+script = ExtResource("1_26wxw")
+wave_color_1 = Color(1, 0.345098, 0.278431, 1)
+wave_color_2 = Color(0.921569, 0.447059, 0.129412, 1)
+flame_center_scale = 0.854
+burst_setting = [[1, 2]]
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(0, -60)
+rotation = -1.5708
+collision_layer = 4096
+collision_mask = 8192
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+material = ExtResource("2_pdtui")
+position = Vector2(-5.53162e-05, 0.0701647)
+rotation = 1.5708
+scale = Vector2(1.59496, 1.00011)
+texture = ExtResource("3_qjy34")
+region_enabled = true
+region_rect = Rect2(359.624, 140.43, 104.895, 1.28818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("SegmentShape2D_ewd68")
+debug_color = Color(0, 0.662745, 0.772549, 0.419608)
+
+[node name="Area2D2" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(-71.71, 12.12)
+collision_layer = 4096
+collision_mask = 8192
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+material = ExtResource("2_pdtui")
+position = Vector2(-5.53162e-05, 0.0701647)
+rotation = 1.5708
+scale = Vector2(1.59496, 1.00011)
+texture = ExtResource("3_qjy34")
+region_enabled = true
+region_rect = Rect2(359.624, 140.43, 104.895, 1.28818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("SegmentShape2D_ewd68")
+debug_color = Color(0, 0.662745, 0.772549, 0.419608)
+
+[node name="Area2D3" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(72.72, 13.13)
+collision_layer = 4096
+collision_mask = 8192
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D3"]
+material = ExtResource("2_pdtui")
+position = Vector2(-5.53162e-05, 0.0701647)
+rotation = 1.5708
+scale = Vector2(1.59496, 1.00011)
+texture = ExtResource("3_qjy34")
+region_enabled = true
+region_rect = Rect2(359.624, 140.43, 104.895, 1.28818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource("SegmentShape2D_ewd68")
+debug_color = Color(0, 0.662745, 0.772549, 0.419608)
+
+[node name="Area2D4" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(0, 81.81)
+rotation = -1.5708
+collision_layer = 4096
+collision_mask = 8192
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D4"]
+material = ExtResource("2_pdtui")
+position = Vector2(-5.53162e-05, 0.0701647)
+rotation = 1.5708
+scale = Vector2(1.59496, 1.00011)
+texture = ExtResource("3_qjy34")
+region_enabled = true
+region_rect = Rect2(359.624, 140.43, 104.895, 1.28818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+shape = SubResource("SegmentShape2D_ewd68")
+debug_color = Color(0, 0.662745, 0.772549, 0.419608)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("4_m7o8p")
+metadata/_edit_lock_ = true
+
+[node name="burst_wave" type="Node2D" parent="."]
+
+[node name="burst" type="Node2D" parent="burst_wave"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="burst_wave/burst"]
+position = Vector2(4.76837e-06, -25.25)
+shape = SubResource("RectangleShape2D_h700a")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

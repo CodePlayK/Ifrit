@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://qwjrdhvdk0sc"]
+
+[ext_resource type="Shader" path="res://TEST/wave.gdshader" id="1_0lo28"]
+
+[resource]
+shader = ExtResource("1_0lo28")
+shader_parameter/lines = 50
+shader_parameter/amplitude = 0.705
+shader_parameter/frequency = 0.206
+shader_parameter/intensity = 0.75
+shader_parameter/line_sharpness = 0.5
+shader_parameter/line_size = 1.0
+shader_parameter/fade = 0.054
+shader_parameter/rest_size = -0.223
+shader_parameter/edge = 0.156
+shader_parameter/speed = 0.5
+shader_parameter/color = Color(1, 0.5775, 0.35, 1)
+shader_parameter/dot_matrix = true
+shader_parameter/dot_matriz_size = 120
+shader_parameter/speech_sim = true
+shader_parameter/speech_intensity = 0.8
+shader_parameter/progress = 1.0

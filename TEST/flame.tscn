@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dq6qe65p1gvxk"]
+
+[node name="Flame" type="Marker2D"]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-0.125, -38)
