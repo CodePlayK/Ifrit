@@ -3,37 +3,35 @@ var poly_flame
 var burst_flame
 var ray_list:Array
 var flame_list:Array
-@export var wave_color_1:Color
-@export var wave_color_2:Color
+
+@export var wave_color_defalut:Color
 @export var flame_center_scale:float=1.0
 @onready var wave=$wave
 @onready var wave_0=$"wave/0"
 @onready var wave_1=$"wave/1"
 @onready var wave_2=$"wave/2"
-@onready var talk=$"wave/talk"
+@onready var talk=$"wave/aniplayer_talk"
+@onready var aniplayer_burst_flame=$"burst_wave/aniplayer_burst_flame"
 @onready var burst=$"burst_wave/burst"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.connect("change_flames",Callable(self,"_on_change_flames"))
 	EventBus.connect("burst_flame_wave",Callable(self,"_on_burst_flame_wave"))
+	EventBus.connect("flame_touch_box",Callable(self,"_on_flame_touch_box"))
 	poly_flame=preload("res://core/scene/world/flame.tscn")
 	burst_flame=preload("res://core/scene/world/flame_burst.tscn" )
 	for i in range(0,20):
 		#旋转角度,波速度,线粗细,波长度,颜色,图层
-		make_flames(Vector2(-360,360),randf_range(2.3,3.0),randf_range(10,15),randf_range(1.7,2),wave_color_1,wave_0)
+		make_flames(Vector2(-360,360),randf_range(2.3,3.0),randf_range(10,15),randf_range(1.7,2),wave_color_defalut,wave_0)
 	for i in range(0,20):
 		#旋转角度,波速度,A线粗细,波长度,颜色,图层
-		make_flames(Vector2(-360,360),randf_range(1,2),randf_range(7,10),randf_range(1.4,1.7),wave_color_2,wave_1)
+		make_flames(Vector2(-360,360),randf_range(1,2),randf_range(7,10),randf_range(1.4,1.7),wave_color_defalut,wave_1)
 	for i in range(0,20):
 		#旋转角度,波速度,A线粗细,波长度,颜色,图层
-		make_flames(Vector2(-360,360),randf_range(1,2),randf_range(7,10),randf_range(1,1.4),wave_color_2,wave_2)
+		make_flames(Vector2(-360,360),randf_range(1,2),randf_range(7,10),randf_range(1,1.4),wave_color_defalut,wave_2)
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func make_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer):
 	var flame = poly_flame.instantiate()
@@ -45,14 +43,19 @@ func make_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer):
 	flame.set_scale(Vector2(1.0,y_scale))
 	layer.add_child(flame)
 
-func make_burst_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer):
+func make_burst_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer,cube_side):
 	var flame = burst_flame.instantiate()
+	var burst_rotation:int=burst.get_rotation_degrees()
 	var rotate=randf_range(routate_range.x, routate_range.y)
+	rotate=rotate-burst_rotation-10
 	flame.set_rotation_degrees(rotate)
 	flame.wave_speed=wave_speed
 	flame.line=line
 	flame.wave_speed=wave_speed
+	#设置碰撞层
+	flame.mask=cube_side
 	flame.get_node("sprit").material.set_shader_parameter("color",Vector4(color.r,color.g,color.b,color.a))
+	#flame.get_node("RayCast2D").set_collision_mask_value(cube_side,true)
 	flame.set_scale(Vector2(1.0,y_scale))
 	layer.add_child(flame)
 
@@ -89,34 +92,39 @@ func _on_change_flames(routate_range:Vector2,wave_speed:Vector2,line:Vector2,y_s
 	var center_color_v4=Vector4(wave_center_color.r,wave_center_color.g,wave_center_color.b,wave_center_color.a)
 	change_flame(routate_range,wave_speed,line,y_scale,color_v4,layer,center_color_v4,routate_speed)
 
-#触碰方向(1-4),图层
 func _on_burst_flame_wave(burst_setting):
 	var burst_vec=Vector2.ZERO
 	var layer
 	var color
 	var color1:Color
 	for burst_set in burst_setting:
-		#-45,45,135,-135,-45
+		#四边有效象限
 		match burst_set[0]:
-			1:burst_vec=Vector2(-40,40)
-			2:burst_vec=Vector2(50,130)
-			3:burst_vec=Vector2(-140,140)
-			4:burst_vec=Vector2(-50,-130)
+			1:
+				burst_vec=Vector2(-35,35)
+			2:
+				burst_vec=Vector2(55,125)
+			3:
+				burst_vec=Vector2(145,215)
+			4:
+				burst_vec=Vector2(-55,-125)
+		#获取对应背景层颜色
 		layer=wave.find_child(str(burst_set[1]))
 		var flames=	layer.get_children()
 		for flame in flames:
 			if flame is Flame:
 				color=flame.get_node("sprit").material.get_shader_parameter("color")
 				break
+		#Color转为shader的vec4向量
 		color1.r=color.x
 		color1.g=color.y
 		color1.b=color.z
 		color1.a=color.w
-		#旋转角度,波速度,线粗细,波长度,颜色,图层
-		#await talk.animation_finished
-		make_burst_flames(burst_vec,randf_range(2.3,3.0),randf_range(2,2),randf_range(2,2.5),color1,burst)
+		#旋转角度,波速度,线粗细,波长度,颜色,图层，碰撞mark
+		make_burst_flames(burst_vec,randf_range(2.3,3.0),randf_range(2,2),randf_range(2.5,3),color1,burst,burst_set[0]+12)
+		aniplayer_burst_flame.play("rotate")
 	pass
 
-
-func _on_talk_animation_finished(anim_name: StringName) -> void:
+func _on_flame_touch_box(mask) -> void:
+	print("接触"+str(mask))
 	pass # Replace with function body.

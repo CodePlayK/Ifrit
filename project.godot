@@ -149,9 +149,8 @@ texture={
 
 ui_up={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":0,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"unicode":0,"echo":false,"script":null)
 ]
 }
 move_right={
@@ -204,8 +203,11 @@ pointing/emulate_mouse_from_touch=false
 2d_physics/layer_3="ladder"
 2d_physics/layer_4="environment_kills"
 2d_physics/layer_9="enemey"
-2d_physics/layer_13="gameplay_cube"
-2d_physics/layer_14="gameplay_file"
+2d_physics/layer_13="gameplay_cube_up"
+2d_physics/layer_14="gameplay_cube_left"
+2d_physics/layer_15="gameplay_cube_down"
+2d_physics/layer_16="gameplay_cube_right"
+2d_physics/layer_21="gameplay_burst_flame"
 
 [physics]
 

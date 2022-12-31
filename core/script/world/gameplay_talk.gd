@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#手动循环已获得动画结束信号
 func _on_animation_finished(anim_name: StringName) -> void:
 	play("normal")
 	pass # Replace with function body.
