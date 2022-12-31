@@ -36,7 +36,7 @@ var quick_selected_file: String = ""
 
 func _ready() -> void:
 	menu_button.icon = get_theme_icon("GuiDropdown", "EditorIcons")
-	
+
 	if is_instance_valid(editor_plugin):
 		editor_plugin.main_view.new_dialog.file_selected.connect(_on_file_dialog_new_file_selected)
 		editor_plugin.main_view.open_dialog.file_selected.connect(_on_file_dialog_file_selected)
@@ -46,7 +46,7 @@ func _ready() -> void:
 
 func build_menu() -> void:
 	menu.clear()
-	
+
 	menu.add_icon_item(editor_plugin.create_main_icon(), "New Dialogue", ITEM_NEW)
 	menu.add_separator()
 	menu.add_icon_item(get_theme_icon("Load", "EditorIcons"), "Quick Load", ITEM_QUICK_LOAD)
@@ -56,7 +56,7 @@ func build_menu() -> void:
 		menu.add_icon_item(get_theme_icon("Clear", "EditorIcons"), "Clear", ITEM_CLEAR)
 		menu.add_separator()
 		menu.add_item("Show in FileSystem", ITEM_FILESYSTEM)
-	
+
 	menu.size = Vector2.ZERO
 
 
@@ -104,31 +104,31 @@ func _on_menu_button_pressed() -> void:
 		2 + menu_button.global_position.y + menu_button.size.y
 	)
 	menu.popup()
-	
+
 
 func _on_menu_id_pressed(id: int) -> void:
 	match id:
 		ITEM_NEW:
 			is_waiting_for_file = true
 			editor_plugin.main_view.new_dialog.popup_centered()
-			
+
 		ITEM_QUICK_LOAD:
 			quick_selected_file = ""
 			files_list.files = editor_plugin.dialogue_file_cache.values().map(func(item): return item.path)
 			if resource:
 				files_list.select_file(resource.resource_path)
 			quick_open_dialog.popup_centered()
-			
+
 		ITEM_LOAD:
 			is_waiting_for_file = true
 			editor_plugin.main_view.open_dialog.popup_centered()
-		
+
 		ITEM_EDIT:
 			editor_plugin.get_editor_interface().call_deferred("edit_resource", resource)
-			
+
 		ITEM_CLEAR:
 			emit_signal("resource_changed", null)
-			
+
 		ITEM_FILESYSTEM:
 			var file_system = editor_plugin.get_editor_interface().get_file_system_dock()
 			file_system.navigate_to_path(resource.resource_path)

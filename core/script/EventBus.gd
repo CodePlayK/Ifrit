@@ -14,6 +14,8 @@ signal change_worldEnvironment_exposure_white(expose,white)
 signal change_mirror(state)
 signal change_mirror_mix_value(state)
 signal change_heighlight(state)
+signal change_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer_name,wave_center_color,routate_speed)
+signal burst_flame_wave(burst_setting)
 
 func _ready():
 	pass

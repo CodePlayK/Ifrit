@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsnksarje0iit"]
+[gd_scene load_steps=3 format=3 uid="uid://cybolu1focfe1"]
 
-[ext_resource type="Texture2D" uid="uid://eu8kr5p5tjtr" path="res://core/resource/world/tiles_packed.png" id="1"]
-[ext_resource type="PackedScene" uid="uid://24e1pf3cu608" path="res://core/scene/HitBox.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://eu8kr5p5tjtr" path="res://TEST/tiles_packed.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://24e1pf3cu608" path="res://TEST/HitBox.tscn" id="2"]
 
 [node name="Spikes" type="Node2D"]
 

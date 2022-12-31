@@ -9,6 +9,7 @@ class_name Parallax
 @export var parallax_layer_speed_2:=17
 @export var parallax_layer_speed_3:=17
 @export var parallax_layer_speed_4:=17
+@export var parallax_layer_speed_5:=17
 
 
 
@@ -35,6 +36,7 @@ func _ready() -> void:
 	parallax_layers_speed.append(parallax_layer_speed_2)
 	parallax_layers_speed.append(parallax_layer_speed_3)
 	parallax_layers_speed.append(parallax_layer_speed_4)
+	parallax_layers_speed.append(parallax_layer_speed_5)
 	pass # Replace with function body.
 
 

@@ -73,3 +73,8 @@ func _on_change_mirror_mix_value(state):
 	emit_signal("change_mirror_mix_value",state)
 func _on_change_heighlight(state):
 	emit_signal("change_heighlight",state)
+
+
+func _on_sprite_2d_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://core/scene/world/training room.tscn")
+	pass # Replace with function body.

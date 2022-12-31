@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://o4lly22fjfk4"]
 
-[ext_resource type="Texture2D" uid="uid://bty68v21ee26o" path="res://core/resource/world/bedroom/8.png" id="1_kuroi"]
 [ext_resource type="Texture2D" uid="uid://cjtw1oh8a6tjo" path="res://core/resource/world/bedroom/bedroom.png" id="2_6ctul"]
-[ext_resource type="Texture2D" uid="uid://bc64s257a315m" path="res://core/resource/world/tiles_packed-1.png" id="3_s7j8c"]
+[ext_resource type="Texture2D" uid="uid://bty68v21ee26o" path="res://core/resource/world/bedroom/light mask/8.png" id="2_tn43x"]
+[ext_resource type="Texture2D" uid="uid://bc64s257a315m" path="res://TEST/tiles_packed-1.png" id="3_xi7e1"]
 [ext_resource type="Script" path="res://TEST/Sprite2D.gd" id="4_inbhn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5u4x7"]
@@ -596,12 +596,12 @@ z_index = 1
 position = Vector2(13, 55)
 scale = Vector2(0.0814815, 0.0827452)
 energy = 1.44
-texture = ExtResource("1_kuroi")
+texture = ExtResource("2_tn43x")
 texture_scale = 6.02
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(-21, 56)
-texture = ExtResource("3_s7j8c")
+texture = ExtResource("3_xi7e1")
 region_enabled = true
 region_rect = Rect2(20, 92, 51, 51)
 
@@ -611,7 +611,7 @@ collision_layer = 2
 script = ExtResource("4_inbhn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-texture = ExtResource("3_s7j8c")
+texture = ExtResource("3_xi7e1")
 region_enabled = true
 region_rect = Rect2(108, 19, 18, 17)
 

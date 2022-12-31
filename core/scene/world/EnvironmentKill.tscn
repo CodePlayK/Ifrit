@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpkljuf4di3bv"]
+[gd_scene load_steps=5 format=3 uid="uid://vqcjbrcbj2fk"]
 
-[ext_resource type="Texture2D" uid="uid://eu8kr5p5tjtr" path="res://core/resource/world/tiles_packed.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://eu8kr5p5tjtr" path="res://TEST/tiles_packed.png" id="1"]
 [ext_resource type="Script" path="res://core/script/world/EnvironmentKill.gd" id="2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwhl2"]

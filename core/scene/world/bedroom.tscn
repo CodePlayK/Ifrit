@@ -1,38 +1,39 @@
-[gd_scene load_steps=91 format=3 uid="uid://tc337u8xjr1i"]
+[gd_scene load_steps=92 format=3 uid="uid://caeqciddh4mb0"]
 
 [ext_resource type="Texture2D" uid="uid://cjtw1oh8a6tjo" path="res://core/resource/world/bedroom/bedroom.png" id="1_nd1w2"]
 [ext_resource type="Script" path="res://core/script/world/bedroom.gd" id="1_ohdqg"]
-[ext_resource type="Texture2D" uid="uid://0huri75q2xep" path="res://core/resource/world/bedroom/3.png" id="2_cdbyy"]
 [ext_resource type="PackedScene" uid="uid://d1wfux376uoqb" path="res://core/scene/character/player/Player.tscn" id="2_jnqi5"]
 [ext_resource type="Shader" path="res://shader/chromatic.gdshader" id="2_pihcr"]
 [ext_resource type="Texture2D" uid="uid://cnwa6oot74o88" path="res://shader/SCREEN.png" id="3_206j5"]
 [ext_resource type="Script" path="res://core/script/world/MainLight.gd" id="3_can47"]
 [ext_resource type="Shader" path="res://TEST/Artsy Circle blur.gdshader" id="3_llxxr"]
 [ext_resource type="PackedScene" uid="uid://dlaktb0hsbvh" path="res://core/scene/character/npc/ifrit.tscn" id="3_mf07j"]
-[ext_resource type="PackedScene" uid="uid://b361p61jmf257" path="res://core/scene/small_example_balloon.tscn" id="4_2xvis"]
-[ext_resource type="Texture2D" uid="uid://bsd7d8d3mvo1b" path="res://core/resource/world/bedroom/2.png" id="4_j5p61"]
+[ext_resource type="PackedScene" uid="uid://b361p61jmf257" path="res://core/scene/common/small_example_balloon.tscn" id="4_2xvis"]
 [ext_resource type="FontFile" uid="uid://cny1vwonlh7gb" path="res://core/resource/font/DinkieBitmap-9pxDemo.ttf" id="6_1b8f2"]
 [ext_resource type="Script" path="res://TEST/Label.gd" id="7_382jj"]
 [ext_resource type="Script" path="res://core/script/world/BackgroudLight.gd" id="8_eu4rt"]
 [ext_resource type="Script" path="res://core/script/world/SleepLight.gd" id="10_0vqnu"]
+[ext_resource type="Texture2D" uid="uid://bsd7d8d3mvo1b" path="res://core/resource/world/bedroom/light mask/2.png" id="10_rnb20"]
 [ext_resource type="Script" path="res://core/script/world/parallax/Parallax.gd" id="12_5qwl4"]
-[ext_resource type="Texture2D" uid="uid://ctuu6kfj1mxui" path="res://core/resource/world/bedroom/5.png" id="12_jephs"]
-[ext_resource type="Texture2D" uid="uid://cs4sadogplcf" path="res://core/resource/world/bedroom/6.png" id="13_3dtfp"]
-[ext_resource type="Texture2D" uid="uid://c02kytdbvj2b6" path="res://core/resource/world/bedroom/bathroomLight.png" id="14_ju4y7"]
 [ext_resource type="Script" path="res://core/script/world/Bathroom_Area.gd" id="14_rs5d6"]
 [ext_resource type="Material" uid="uid://dg55qkcg0sfxg" path="res://shader/outline_orange.tres" id="14_se0xh"]
-[ext_resource type="Texture2D" uid="uid://dvopnr60cv1bf" path="res://core/resource/world/bedroom/7.png" id="15_dbnq2"]
 [ext_resource type="Script" path="res://core/script/world/BathroomLight.gd" id="15_ikj5h"]
 [ext_resource type="Script" path="res://core/script/world/bedroom/bathroom_swich_outline.gd" id="15_o7e8p"]
 [ext_resource type="Shader" path="res://TEST/mirror.gdshader" id="16_lto5f"]
 [ext_resource type="Script" path="res://core/script/world/DeskLight.gd" id="16_uy2ig"]
 [ext_resource type="Texture2D" uid="uid://bsfjynrmp2ync" path="res://core/resource/world/bedroom/heighlight.png" id="16_xn0vt"]
 [ext_resource type="Script" path="res://core/script/world/bedroom/HeighLight.gd" id="17_36mqe"]
-[ext_resource type="Texture2D" uid="uid://di33kctvdxbfj" path="res://core/resource/world/bedroom/SLEEPLIGHT.png" id="17_t6pf2"]
 [ext_resource type="Script" path="res://core/script/world/WorldEnvironment.gd" id="18_a07gi"]
 [ext_resource type="Script" path="res://core/script/world/reflection.gd" id="18_egn5g"]
+[ext_resource type="Texture2D" uid="uid://cs4sadogplcf" path="res://core/resource/world/bedroom/light mask/6.png" id="18_uybat"]
+[ext_resource type="Texture2D" uid="uid://ctuu6kfj1mxui" path="res://core/resource/world/bedroom/light mask/5.png" id="19_ycs4q"]
 [ext_resource type="Texture2D" uid="uid://dphj774dc57n" path="res://core/resource/world/bedroom/walls.png" id="20_xlq22"]
+[ext_resource type="Texture2D" uid="uid://c02kytdbvj2b6" path="res://core/resource/world/bedroom/light mask/bathroomLight.png" id="24_bxesw"]
 [ext_resource type="FontFile" uid="uid://dukajabaq32vu" path="res://core/resource/font/FFFFORWA.TTF" id="24_na73m"]
+[ext_resource type="Texture2D" uid="uid://0huri75q2xep" path="res://core/resource/world/bedroom/light mask/3.png" id="26_q2kh1"]
+[ext_resource type="Texture2D" uid="uid://dvopnr60cv1bf" path="res://core/resource/world/bedroom/light mask/7.png" id="28_5lw1p"]
+[ext_resource type="Material" uid="uid://qwjrdhvdk0sc" path="res://shader/wave.tres" id="30_xm0o4"]
+[ext_resource type="Texture2D" uid="uid://di33kctvdxbfj" path="res://core/resource/world/bedroom/light mask/SLEEPLIGHT.png" id="32_38qbr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ftc6o"]
 shader = ExtResource("2_pihcr")
@@ -54,184 +55,12 @@ shader = ExtResource("3_llxxr")
 shader_parameter/v = 1.0
 shader_parameter/size = 10.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2rli6"]
-texture = ExtResource("1_nd1w2")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-8:0/0 = 0
-9:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-8:1/0 = 0
-9:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-9:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-8:3/0 = 0
-9:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-9:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
-8:7/0 = 0
-9:7/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-5:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-5:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-25:0/0 = 0
-25:0/0/terrain_set = 0
-25:0/0/terrain = 0
-25:0/0/terrains_peering_bit/right_side = 0
-26:0/0 = 0
-26:0/0/terrain_set = 0
-26:0/0/terrain = 0
-26:0/0/terrains_peering_bit/right_side = 0
-26:0/0/terrains_peering_bit/left_side = 0
-27:0/0 = 0
-27:0/0/terrain_set = 0
-27:0/0/terrain = 0
-27:0/0/terrains_peering_bit/right_side = 0
-27:0/0/terrains_peering_bit/left_side = 0
-28:0/0 = 0
-28:0/0/terrain_set = 0
-28:0/0/terrain = 0
-28:0/0/terrains_peering_bit/right_side = 0
-28:0/0/terrains_peering_bit/left_side = 0
-29:0/0 = 0
-29:0/0/terrain_set = 0
-29:0/0/terrain = 0
-29:0/0/terrains_peering_bit/right_side = 0
-29:0/0/terrains_peering_bit/left_side = 0
-30:0/0 = 0
-30:0/0/terrain_set = 0
-30:0/0/terrain = 0
-30:0/0/terrains_peering_bit/right_side = 0
-30:0/0/terrains_peering_bit/left_side = 0
-31:0/0 = 0
-31:0/0/terrain_set = 0
-31:0/0/terrain = 0
-31:0/0/terrains_peering_bit/left_side = 0
-24:7/0 = 0
-0:16/0 = 0
-1:16/0 = 0
-2:16/0 = 0
-15:12/0 = 0
-16:13/0 = 0
-16:14/0 = 0
-17:14/0 = 0
-17:13/0 = 0
-17:12/0 = 0
-16:12/0 = 0
-15:13/0 = 0
-15:14/0 = 0
-18:12/0 = 0
-19:12/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_77i6r"]
-terrain_set_0/mode = 0
-terrain_set_0/terrain_0/name = "Terrain 0"
-terrain_set_0/terrain_0/color = Color(0.101961, 0.313726, 0.870588, 1)
-sources/0 = SubResource("TileSetAtlasSource_2rli6")
-
-[sub_resource type="GDScript" id="GDScript_d1cfy"]
-script/source = "extends TileMap
-class_name MainLightTile
-@onready var resource=preload(\"res://core/dialog/test1.dialogue\")
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-"
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_musn3"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kg6s4"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_26d4k"]
 polygon = PackedVector2Array(-24, 2.5, 20.5, 3, 20.5, 8, -24, 8.5)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_t5g2a"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4xi2y"]
 polygon = PackedVector2Array(-24, 2.5, 20.5, 3, 20.5, 8, -24, 8.5)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0nkvp"]
@@ -502,14 +331,14 @@ texture_region_size = Vector2i(48, 48)
 0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:5/0/physics_layer_0/angular_velocity = 0.0
 0:6/0 = 0
-0:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_kg6s4")
+0:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_26d4k")
 0:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:6/0/physics_layer_0/angular_velocity = 0.0
 1:5/0 = 0
 1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:5/0/physics_layer_0/angular_velocity = 0.0
 1:6/0 = 0
-1:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_t5g2a")
+1:6/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_4xi2y")
 1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:6/0/physics_layer_0/angular_velocity = 0.0
 3:6/0 = 0
@@ -596,6 +425,9 @@ terrain_set_0/terrain_0/color = Color(0.32549, 0.443137, 0.941176, 1)
 terrain_set_0/terrain_1/name = "挂装"
 terrain_set_0/terrain_1/color = Color(0.635294, 0.654902, 0.937255, 1)
 sources/2 = SubResource("TileSetAtlasSource_0nkvp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i8lwa"]
+size = Vector2(20, 233.243)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g4wh"]
 texture = ExtResource("20_xlq22")
@@ -1314,6 +1146,63 @@ use_texture_padding = false
 25:12/0 = 0
 24:14/0 = 0
 26:12/0 = 0
+23:22/0 = 0
+24:22/0 = 0
+25:22/0 = 0
+26:22/0 = 0
+26:23/0 = 0
+26:24/0 = 0
+27:24/0 = 0
+27:23/0 = 0
+27:22/0 = 0
+23:23/0 = 0
+23:24/0 = 0
+24:24/0 = 0
+25:24/0 = 0
+25:23/0 = 0
+24:23/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+17:27/0 = 0
+18:27/0 = 0
+18:28/0 = 0
+19:28/0 = 0
+20:28/0 = 0
+21:28/0 = 0
+22:28/0 = 0
+22:29/0 = 0
+23:29/0 = 0
+24:29/0 = 0
+25:29/0 = 0
+25:28/0 = 0
+24:28/0 = 0
+23:28/0 = 0
+23:27/0 = 0
+22:27/0 = 0
+21:27/0 = 0
+20:27/0 = 0
+19:27/0 = 0
+18:29/0 = 0
+19:29/0 = 0
+20:29/0 = 0
+21:29/0 = 0
+17:29/0 = 0
+17:28/0 = 0
+24:27/0 = 0
+25:27/0 = 0
+17:30/0 = 0
+18:30/0 = 0
+23:30/0 = 0
+24:30/0 = 0
+25:30/0 = 0
+22:30/0 = 0
+21:30/0 = 0
+20:30/0 = 0
+19:30/0 = 0
+26:27/0 = 0
+26:28/0 = 0
+27:27/0 = 0
+27:28/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_wf0o0"]
 sources/1 = SubResource("TileSetAtlasSource_r7eul")
@@ -1634,13 +1523,13 @@ tile_size = Vector2i(24, 24)
 sources/0 = SubResource("TileSetAtlasSource_3x6x6")
 sources/1 = SubResource("TileSetAtlasSource_m1yq0")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3v4g6"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u2bnm"]
 polygon = PackedVector2Array(-3.5, -12, -0.5, -12, -0.5, 12, -3.5, 12)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_scovo"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c0mpk"]
 polygon = PackedVector2Array(-3.5, -12, -0.5, -12, -0.5, 12, -3.5, 12)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ajjx6"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c144q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ft8l"]
 texture = ExtResource("20_xlq22")
@@ -1664,7 +1553,7 @@ texture_region_size = Vector2i(24, 24)
 1:4/0 = 0
 1:5/0 = 0
 8:1/0 = 0
-8:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_scovo")
+8:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c0mpk")
 8:3/0 = 0
 8:4/0 = 0
 8:5/0 = 0
@@ -1681,9 +1570,9 @@ texture_region_size = Vector2i(24, 24)
 6:3/0 = 0
 6:4/0 = 0
 8:2/0 = 0
-8:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ajjx6")
+8:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c144q")
 8:0/0 = 0
-8:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_3v4g6")
+8:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_u2bnm")
 
 [sub_resource type="TileSet" id="TileSet_f7pou"]
 tile_size = Vector2i(24, 24)
@@ -2003,6 +1892,667 @@ sources/0 = SubResource("TileSetAtlasSource_rkgcx")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05ce4"]
 size = Vector2(130.557, 152.583)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljo8k"]
+texture = ExtResource("1_nd1w2")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+27:0/0 = 0
+28:0/0 = 0
+29:0/0 = 0
+30:0/0 = 0
+31:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+23:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+23:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+23:3/0 = 0
+31:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+23:4/0 = 0
+31:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+23:5/0 = 0
+31:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+23:6/0 = 0
+31:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+23:7/0 = 0
+24:7/0 = 0
+26:7/0 = 0
+31:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+23:8/0 = 0
+24:8/0 = 0
+28:8/0 = 0
+31:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+23:9/0 = 0
+24:9/0 = 0
+25:9/0 = 0
+26:9/0 = 0
+27:9/0 = 0
+28:9/0 = 0
+31:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+23:10/0 = 0
+24:10/0 = 0
+25:10/0 = 0
+26:10/0 = 0
+27:10/0 = 0
+28:10/0 = 0
+29:10/0 = 0
+31:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+22:11/0 = 0
+23:11/0 = 0
+24:11/0 = 0
+25:11/0 = 0
+26:11/0 = 0
+27:11/0 = 0
+28:11/0 = 0
+29:11/0 = 0
+31:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+17:12/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+21:12/0 = 0
+22:12/0 = 0
+23:12/0 = 0
+24:12/0 = 0
+25:12/0 = 0
+26:12/0 = 0
+31:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+9:13/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+21:13/0 = 0
+22:13/0 = 0
+23:13/0 = 0
+24:13/0 = 0
+25:13/0 = 0
+26:13/0 = 0
+31:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+21:14/0 = 0
+22:14/0 = 0
+23:14/0 = 0
+24:14/0 = 0
+25:14/0 = 0
+26:14/0 = 0
+31:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+22:15/0 = 0
+23:15/0 = 0
+24:15/0 = 0
+27:15/0 = 0
+28:15/0 = 0
+29:15/0 = 0
+31:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+16:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+22:16/0 = 0
+23:16/0 = 0
+24:16/0 = 0
+25:16/0 = 0
+27:16/0 = 0
+28:16/0 = 0
+29:16/0 = 0
+30:16/0 = 0
+31:16/0 = 0
+0:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+10:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+16:17/0 = 0
+17:17/0 = 0
+18:17/0 = 0
+19:17/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+22:17/0 = 0
+23:17/0 = 0
+24:17/0 = 0
+25:17/0 = 0
+27:17/0 = 0
+28:17/0 = 0
+29:17/0 = 0
+30:17/0 = 0
+31:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+2:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+9:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+13:18/0 = 0
+14:18/0 = 0
+16:18/0 = 0
+17:18/0 = 0
+18:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+21:18/0 = 0
+22:18/0 = 0
+23:18/0 = 0
+24:18/0 = 0
+25:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+6:19/0 = 0
+7:19/0 = 0
+9:19/0 = 0
+10:19/0 = 0
+11:19/0 = 0
+12:19/0 = 0
+13:19/0 = 0
+14:19/0 = 0
+16:19/0 = 0
+17:19/0 = 0
+18:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+21:19/0 = 0
+22:19/0 = 0
+23:19/0 = 0
+24:19/0 = 0
+25:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+6:20/0 = 0
+7:20/0 = 0
+9:20/0 = 0
+10:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+17:20/0 = 0
+18:20/0 = 0
+19:20/0 = 0
+20:20/0 = 0
+21:20/0 = 0
+22:20/0 = 0
+23:20/0 = 0
+24:20/0 = 0
+25:20/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+6:21/0 = 0
+7:21/0 = 0
+8:21/0 = 0
+9:21/0 = 0
+10:21/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+10:22/0 = 0
+11:22/0 = 0
+23:22/0 = 0
+24:22/0 = 0
+27:22/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+8:23/0 = 0
+9:23/0 = 0
+10:23/0 = 0
+11:23/0 = 0
+13:23/0 = 0
+18:23/0 = 0
+19:23/0 = 0
+20:23/0 = 0
+23:23/0 = 0
+24:23/0 = 0
+27:23/0 = 0
+1:24/0 = 0
+2:24/0 = 0
+3:24/0 = 0
+4:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+8:24/0 = 0
+9:24/0 = 0
+12:24/0 = 0
+13:24/0 = 0
+14:24/0 = 0
+15:24/0 = 0
+16:24/0 = 0
+17:24/0 = 0
+23:24/0 = 0
+24:24/0 = 0
+25:24/0 = 0
+26:24/0 = 0
+27:24/0 = 0
+1:25/0 = 0
+2:25/0 = 0
+3:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+8:25/0 = 0
+9:25/0 = 0
+10:25/0 = 0
+12:25/0 = 0
+13:25/0 = 0
+14:25/0 = 0
+17:25/0 = 0
+23:25/0 = 0
+1:26/0 = 0
+2:26/0 = 0
+3:26/0 = 0
+4:26/0 = 0
+5:26/0 = 0
+6:26/0 = 0
+7:26/0 = 0
+8:26/0 = 0
+9:26/0 = 0
+10:26/0 = 0
+12:26/0 = 0
+13:26/0 = 0
+14:26/0 = 0
+17:26/0 = 0
+18:26/0 = 0
+19:26/0 = 0
+20:26/0 = 0
+1:27/0 = 0
+2:27/0 = 0
+3:27/0 = 0
+4:27/0 = 0
+5:27/0 = 0
+6:27/0 = 0
+7:27/0 = 0
+8:27/0 = 0
+9:27/0 = 0
+10:27/0 = 0
+1:28/0 = 0
+2:28/0 = 0
+3:28/0 = 0
+4:28/0 = 0
+6:28/0 = 0
+7:28/0 = 0
+8:28/0 = 0
+9:28/0 = 0
+15:28/0 = 0
+16:28/0 = 0
+0:29/0 = 0
+1:29/0 = 0
+2:29/0 = 0
+3:29/0 = 0
+4:29/0 = 0
+5:29/0 = 0
+6:29/0 = 0
+7:29/0 = 0
+8:29/0 = 0
+9:29/0 = 0
+15:29/0 = 0
+16:29/0 = 0
+24:25/0 = 0
+24:26/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_c7r7c"]
+sources/0 = SubResource("TileSetAtlasSource_ljo8k")
+
 [sub_resource type="Animation" id="Animation_sw5ak"]
 length = 6.0
 loop_mode = 1
@@ -2055,7 +2605,7 @@ size = Vector2(600, 50)
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_ohdqg")
-day_light = false
+metadata/_edit_lock_ = true
 
 [node name="ScreenEffect" type="CanvasLayer" parent="."]
 layer = 100
@@ -2079,61 +2629,33 @@ environment = SubResource("Environment_l38r0")
 script = ExtResource("18_a07gi")
 
 [node name="ifrit" parent="." instance=ExtResource("3_mf07j")]
+visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_qkbj1")
-position = Vector2(446, 211)
+position = Vector2(480, 212.474)
 collision_layer = 0
 
-[node name="LightTileMap" type="TileMap" parent="."]
-top_level = true
-position = Vector2(205.527, 212.486)
-tile_set = SubResource("TileSet_77i6r")
-format = 2
-layer_0/name = "墙壁"
-layer_1/name = "挂件"
-layer_1/enabled = true
-layer_1/modulate = Color(1, 1, 1, 1)
-layer_1/y_sort_enabled = false
-layer_1/y_sort_origin = 0
-layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(-786420, 1966080, 0)
-layer_2/name = "挂件1"
-layer_2/enabled = true
-layer_2/modulate = Color(1, 1, 1, 1)
-layer_2/y_sort_enabled = false
-layer_2/y_sort_origin = 0
-layer_2/z_index = 2
-layer_2/tile_data = PackedInt32Array(-524288, 983040, 12, -458752, 983040, 13, -393216, 983040, 14, -524287, 1048576, 12, -458751, 1048576, 13, -393215, 1048576, 14, -524286, 1114112, 12, -458750, 1114112, 13, -393214, 1114112, 14, -262149, 1179648, 12, -262148, 1245184, 12)
-layer_3/name = "家具"
-layer_3/enabled = true
-layer_3/modulate = Color(1, 1, 1, 1)
-layer_3/y_sort_enabled = false
-layer_3/y_sort_origin = 0
-layer_3/z_index = 3
-layer_3/tile_data = PackedInt32Array()
-script = SubResource("GDScript_d1cfy")
-
-[node name="badroomTileMap" type="TileMap" parent="."]
+[node name="bedroomTileMap" type="TileMap" parent="."]
 material = SubResource("ShaderMaterial_musn3")
 position = Vector2(205.527, 212.486)
 tile_set = SubResource("TileSet_aqfj3")
 format = 2
 layer_0/name = "墙壁"
-layer_0/tile_data = PackedInt32Array(-196606, 65538, 1, -131071, 65538, 1, -196607, 65538, 1, -131072, 65538, 1, -196608, 65538, 1, -65537, 65538, 1, -131073, 65538, 1, -65538, 65538, 1, -131074, 65538, 1, -65539, 65538, 1, -131075, 65538, 1, -65540, 65538, 1, -131076, 65538, 1, -65541, 65538, 1, -131077, 65538, 1, -5, 65538, 2, -4, 65538, 2, -3, 65538, 2, -1, 65538, 2, -65536, 65538, 2, -65535, 65538, 2, -65534, 65538, 2, -65532, 65538, 2, -131068, 65538, 1, -262140, 65538, 0, -262139, 131074, 0, -196603, 131074, 1, -131067, 131074, 1, -65531, 131074, 2, -196613, 65538, 0, -196612, 65538, 0, -196611, 65538, 0, -196610, 65538, 0, -196609, 65538, 0, -262144, 65538, 0, -262143, 65538, 0, -262142, 65538, 0, -65533, 65538, 2, -131069, 65538, 1, -196605, 65538, 1, -262141, 65538, 0, -131070, 65538, 1, 6, 65538, 7, -196602, 65538, 7, -262138, 65538, 7, -131066, 65538, 7, -65530, 65538, 7, -262150, 65538, 7, -262149, 65538, 7, -262148, 65538, 7, -262147, 65538, 7, -262146, 65538, 7, -262145, 65538, 7, -327680, 65538, 7, -327676, 65538, 7, -327675, 65538, 7, -327674, 65538, 7, -327679, 65538, 7, -327678, 65538, 7, -327677, 65538, 7, 65530, 65538, 7, 65531, 65538, 7, 65532, 65538, 7, 65533, 65538, 7, 65534, 65538, 7, 65535, 65538, 7, 0, 65538, 7, 1, 65538, 7, 2, 65538, 7, 3, 65538, 7, 4, 65538, 7, 5, 65538, 7, 65529, 65538, 7, 65528, 65538, 7, 65527, 65538, 7, -9, 65538, 7, -65545, 65538, 7, -131081, 65538, 7, -196617, 65538, 7, -262153, 65538, 7, -262152, 65538, 7, -262151, 65538, 7, -196614, 2, 0, -131078, 2, 1, -65542, 2, 1, -6, 2, 2, -196604, 65538, 1, -2, 65538, 2)
+layer_0/tile_data = PackedInt32Array(-196606, 65538, 1, -131071, 65538, 1, -196607, 65538, 1, -131072, 65538, 1, -196608, 65538, 1, -65537, 65538, 1, -131073, 65538, 1, -65538, 65538, 1, -131074, 65538, 1, -65539, 65538, 1, -131075, 65538, 1, -65540, 65538, 1, -131076, 65538, 1, -65541, 65538, 1, -131077, 65538, 1, -5, 65538, 2, -4, 65538, 2, -3, 65538, 2, -1, 65538, 2, -65536, 65538, 2, -65535, 65538, 2, -65534, 65538, 2, -65532, 65538, 2, -131068, 65538, 1, -262140, 65538, 0, -262139, 65538, 0, -196603, 65538, 1, -131067, 65538, 1, -65531, 65538, 2, -196613, 65538, 0, -196612, 65538, 0, -196611, 65538, 0, -196610, 65538, 0, -196609, 65538, 0, -262144, 65538, 0, -262143, 65538, 0, -262142, 65538, 0, -65533, 65538, 2, -131069, 65538, 1, -196605, 65538, 1, -262141, 65538, 0, -131070, 65538, 1, 6, 65538, 7, -262138, 131074, 0, -262150, 65538, 7, -262149, 65538, 7, -262148, 65538, 7, -262147, 65538, 7, -262146, 65538, 7, -262145, 65538, 7, -327680, 65538, 7, -327676, 65538, 7, -327675, 65538, 7, -327674, 65538, 7, -327679, 65538, 7, -327678, 65538, 7, -327677, 65538, 7, 65530, 65538, 7, 65531, 65538, 7, 65532, 65538, 7, 65533, 65538, 7, 65534, 65538, 7, 65535, 65538, 7, 0, 65538, 7, 1, 65538, 7, 2, 65538, 7, 3, 65538, 7, 4, 65538, 7, 5, 65538, 7, 65529, 65538, 7, 65528, 65538, 7, 65527, 65538, 7, -9, 65538, 7, -65545, 65538, 7, -131081, 65538, 7, -196617, 65538, 7, -262153, 65538, 7, -262152, 65538, 7, -262151, 65538, 7, -196614, 2, 0, -131078, 2, 1, -65542, 2, 1, -6, 2, 2, -196604, 65538, 1, -2, 65538, 2, 7, 65538, 7, -65529, 65538, 7, -131065, 65538, 7, -196601, 65538, 7, -262137, 65538, 7, -196602, 131074, 1, -131066, 131074, 1, -65530, 131074, 2)
 layer_1/name = "挂件"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 1
-layer_1/tile_data = PackedInt32Array(-65539, 327682, 2, -65541, 262146, 2, -65538, 327682, 2, -65537, 327682, 2, -131072, 327682, 2, -131071, 393218, 2, -131077, 262146, 0, -131076, 327682, 0, -131075, 327682, 0, -131074, 327682, 0, -131073, 327682, 0, -196608, 327682, 0, -196607, 393218, 0, -65535, 458754, 3, -65540, 327682, 2)
+layer_1/tile_data = PackedInt32Array(-65539, 327682, 3, -65537, 327682, 3, -131072, 327682, 3, -131071, 393218, 3, -65535, 458754, 3, -65540, 327682, 3, -65541, 262146, 3, -65538, 327682, 3)
 layer_2/name = "挂件1"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 2
-layer_2/tile_data = PackedInt32Array(-131074, 196610, 3, -131076, 262146, 4)
+layer_2/tile_data = PackedInt32Array(-196608, 327682, 4, -131075, 262146, 4)
 layer_3/name = "家具"
 layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
@@ -2141,6 +2663,14 @@ layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 3
 layer_3/tile_data = PackedInt32Array()
+
+[node name="Sprite2D" type="Area2D" parent="bedroomTileMap"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bedroomTileMap/Sprite2D"]
+position = Vector2(325.201, -114.732)
+shape = SubResource("RectangleShape2D_i8lwa")
 
 [node name="Wall" type="TileMap" parent="."]
 light_mask = 3
@@ -2163,7 +2693,7 @@ modulate = Color(0.941176, 0.941176, 0.941176, 1)
 light_mask = 3
 z_index = 21
 texture_filter = 1
-position = Vector2(321, 201)
+position = Vector2(462, 200.974)
 collision_mask = 269
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -2180,7 +2710,7 @@ scale = Vector2(0.324514, 0.179436)
 color = Color(0.690196, 1, 1, 1)
 energy = 0.3
 range_item_cull_mask = 3
-texture = ExtResource("4_j5p61")
+texture = ExtResource("10_rnb20")
 offset = Vector2(-564.473, 607.42)
 script = ExtResource("8_eu4rt")
 metadata/_edit_lock_ = true
@@ -2277,61 +2807,61 @@ libraries = {
 [node name="Parallax" type="Node" parent="." node_paths=PackedStringArray("rsource")]
 script = ExtResource("12_5qwl4")
 rsource = NodePath("../Camera2D")
-parallax_layer_speed_0 = 10
 parallax_layer_speed_1 = 15
 parallax_layer_speed_2 = 25
 parallax_layer_speed_3 = 30
-parallax_layer_speed_4 = 200
+parallax_layer_speed_4 = 70
+parallax_layer_speed_5 = 200
 
-[node name="ParallaxLayer_-1" type="Node2D" parent="Parallax"]
+[node name="ParallaxLayer_0" type="Node2D" parent="Parallax"]
 position = Vector2(-1.81303, 0)
 
-[node name="Bathroom_Area" type="Area2D" parent="Parallax/ParallaxLayer_-1"]
+[node name="Bathroom_Area" type="Area2D" parent="Parallax/ParallaxLayer_0"]
 position = Vector2(-9.45218, -27.6554)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("14_rs5d6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_-1/Bathroom_Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_0/Bathroom_Area"]
 position = Vector2(-98.8706, 160.688)
 shape = SubResource("RectangleShape2D_xe8no")
 
-[node name="LogoLight" type="PointLight2D" parent="Parallax/ParallaxLayer_-1"]
+[node name="LogoLight" type="PointLight2D" parent="Parallax/ParallaxLayer_0"]
 visible = false
 position = Vector2(399.972, 152.817)
 scale = Vector2(1.84215, 1.71673)
 color = Color(0.729412, 1, 1, 1)
 range_z_min = -5
 range_z_max = 26
-texture = ExtResource("13_3dtfp")
+texture = ExtResource("18_uybat")
 texture_scale = 0.21
 script = SubResource("GDScript_n6w87")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Parallax/ParallaxLayer_-1/LogoLight"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Parallax/ParallaxLayer_0/LogoLight"]
 autoplay = "新建动画"
 playback_speed = 5.57
 libraries = {
 "": SubResource("AnimationLibrary_rajre")
 }
 
-[node name="LogoLightBackground" type="PointLight2D" parent="Parallax/ParallaxLayer_-1/LogoLight"]
+[node name="LogoLightBackground" type="PointLight2D" parent="Parallax/ParallaxLayer_0/LogoLight"]
 light_mask = 32
 position = Vector2(3.80862, -15.2669)
 scale = Vector2(0.542845, 0.582502)
 energy = 0.42
 range_z_max = 18
-texture = ExtResource("12_jephs")
+texture = ExtResource("19_ycs4q")
 
-[node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_-1"]
+[node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_0"]
 z_index = 7
 z_as_relative = false
 position = Vector2(13.9678, -27.4818)
 tile_set = SubResource("TileSet_wf0o0")
 format = 2
-layer_0/tile_data = PackedInt32Array(393235, 1048577, 15, 458771, 1048577, 16, 524307, 1048577, 17, 589843, 1048577, 18, 655379, 1048577, 19, 720915, 1048577, 20, 786451, 1048577, 21, 393236, 1114113, 15, 458772, 1114113, 16, 524308, 1114113, 17, 589844, 1114113, 18, 655380, 1114113, 19, 720916, 1114113, 20, 786452, 1114113, 21, 393237, 1179649, 15, 458773, 1179649, 16, 524309, 1179649, 17, 589845, 1179649, 18, 655381, 1179649, 19, 720917, 1179649, 20, 786453, 1179649, 21, 393238, 1245185, 15, 458774, 1245185, 16, 524310, 1245185, 17, 589846, 1245185, 18, 655382, 1245185, 19, 720918, 1245185, 20, 786454, 1245185, 21, 393239, 1310721, 15, 458775, 1310721, 16, 524311, 1310721, 17, 589847, 1310721, 18, 655383, 1310721, 19, 720919, 1310721, 20, 786455, 1310721, 21, 393240, 1376257, 15, 458776, 1376257, 16, 524312, 1376257, 17, 589848, 1376257, 18, 655384, 1376257, 19, 720920, 1376257, 20, 786456, 1376257, 21, 393241, 1441793, 15, 458777, 1441793, 16, 524313, 1441793, 17, 589849, 1441793, 18, 655385, 1441793, 19, 720921, 1441793, 20, 786457, 1441793, 21, 393242, 1507329, 15, 458778, 1507329, 16, 524314, 1507329, 17, 589850, 1507329, 18, 655386, 1507329, 19, 720922, 1507329, 20, 786458, 1507329, 21, 393243, 1572865, 15, 458779, 1572865, 16, 524315, 1572865, 17, 589851, 1572865, 18, 655387, 1572865, 19, 720923, 1572865, 20, 786459, 1572865, 21, 393244, 1638401, 15, 458780, 1638401, 16, 524316, 1638401, 17, 589852, 1638401, 18, 655388, 1638401, 19, 720924, 1638401, 20, 786460, 1638401, 21, 786441, 589825, 18, 851977, 589825, 19, 917513, 589825, 20, 786442, 655361, 18, 851978, 655361, 19, 917514, 655361, 20, 786443, 720897, 18, 851979, 720897, 19, 917515, 720897, 20, 786444, 786433, 18, 851980, 786433, 19, 917516, 786433, 20, 786445, 851969, 18, 851981, 851969, 19, 917517, 851969, 20, 786446, 917505, 18, 851982, 917505, 19, 917518, 917505, 20, 786432, 1, 12, 851968, 1, 13, 917504, 1, 14, 786433, 65537, 12, 851969, 65537, 13, 917505, 65537, 14, 786434, 131073, 12, 851970, 131073, 13, 917506, 131073, 14, 786435, 196609, 12, 851971, 196609, 13, 917507, 196609, 14, 786436, 262145, 12, 851972, 262145, 13, 917508, 262145, 14, 786437, 327681, 12, 851973, 327681, 13, 917509, 327681, 14, 589824, 1, 18, 655360, 1, 19, 589825, 65537, 18, 655361, 65537, 19, 589826, 131073, 18, 655362, 131073, 19, 589827, 196609, 18, 655363, 196609, 19, 589828, 262145, 18, 655364, 262145, 19, 589829, 327681, 18, 655365, 327681, 19, 720905, 1179649, 26, 720906, 1245185, 26, 720907, 1310721, 26, 786438, 1572865, 9, 851974, 1572865, 10, 917510, 1572865, 11, 786439, 1638401, 9, 851975, 1638401, 10, 917511, 1638401, 11, 786440, 1703937, 9, 851976, 1703937, 10, 917512, 1703937, 11, 851965, 1572865, 9, 917501, 1572865, 10, 983037, 1572865, 11, 851966, 1638401, 9, 917502, 1638401, 10, 983038, 1638401, 11, 851967, 1703937, 9, 917503, 1703937, 10, 983039, 1703937, 11)
+layer_0/tile_data = PackedInt32Array(393235, 1048577, 15, 458771, 1048577, 16, 524307, 1048577, 17, 589843, 1048577, 18, 655379, 1048577, 19, 720915, 1048577, 20, 786451, 1048577, 21, 393236, 1114113, 15, 458772, 1114113, 16, 524308, 1114113, 17, 589844, 1114113, 18, 655380, 1114113, 19, 720916, 1114113, 20, 786452, 1114113, 21, 393237, 1179649, 15, 458773, 1179649, 16, 524309, 1179649, 17, 589845, 1179649, 18, 655381, 1179649, 19, 720917, 1179649, 20, 786453, 1179649, 21, 393238, 1245185, 15, 458774, 1245185, 16, 524310, 1245185, 17, 589846, 1245185, 18, 655382, 1245185, 19, 720918, 1245185, 20, 786454, 1245185, 21, 393239, 1310721, 15, 458775, 1310721, 16, 524311, 1310721, 17, 589847, 1310721, 18, 655383, 1310721, 19, 720919, 1310721, 20, 786455, 1310721, 21, 393240, 1376257, 15, 458776, 1376257, 16, 524312, 1376257, 17, 589848, 1376257, 18, 655384, 1376257, 19, 720920, 1376257, 20, 786456, 1376257, 21, 393241, 1441793, 15, 458777, 1441793, 16, 524313, 1441793, 17, 589849, 1441793, 18, 655385, 1441793, 19, 720921, 1441793, 20, 786457, 1441793, 21, 393242, 1507329, 15, 458778, 1507329, 16, 524314, 1507329, 17, 589850, 1507329, 18, 655386, 1507329, 19, 720922, 1507329, 20, 786458, 1507329, 21, 393243, 1572865, 15, 458779, 1572865, 16, 524315, 1572865, 17, 589851, 1572865, 18, 655387, 1572865, 19, 720923, 1572865, 20, 786459, 1572865, 21, 393244, 1638401, 15, 458780, 1638401, 16, 524316, 1638401, 17, 589852, 1638401, 18, 655388, 1638401, 19, 720924, 1638401, 20, 786460, 1638401, 21, 786441, 589825, 18, 851977, 589825, 19, 917513, 589825, 20, 786442, 655361, 18, 851978, 655361, 19, 917514, 655361, 20, 786443, 720897, 18, 851979, 720897, 19, 917515, 720897, 20, 786444, 786433, 18, 851980, 786433, 19, 917516, 786433, 20, 786445, 851969, 18, 851981, 851969, 19, 917517, 851969, 20, 786446, 917505, 18, 851982, 917505, 19, 917518, 917505, 20, 786432, 1, 12, 851968, 1, 13, 917504, 1, 14, 786433, 65537, 12, 851969, 65537, 13, 917505, 65537, 14, 786434, 131073, 12, 851970, 131073, 13, 917506, 131073, 14, 786435, 196609, 12, 851971, 196609, 13, 917507, 196609, 14, 786436, 262145, 12, 851972, 262145, 13, 917508, 262145, 14, 786437, 327681, 12, 851973, 327681, 13, 917509, 327681, 14, 589829, 327681, 18, 720905, 1179649, 26, 720906, 1245185, 26, 720907, 1310721, 26, 786438, 1572865, 9, 851974, 1572865, 10, 917510, 1572865, 11, 786439, 1638401, 9, 851975, 1638401, 10, 917511, 1638401, 11, 786440, 1703937, 9, 851976, 1703937, 10, 917512, 1703937, 11, 851965, 1572865, 9, 917501, 1572865, 10, 983037, 1572865, 11, 851966, 1638401, 9, 917502, 1638401, 10, 983038, 1638401, 11, 851967, 1703937, 9, 917503, 1703937, 10, 983039, 1703937, 11, 589833, 1, 18, 655369, 1, 19, 589834, 65537, 18, 655370, 65537, 19, 589835, 131073, 18, 655371, 131073, 19, 589836, 196609, 18, 655372, 196609, 19, 589837, 262145, 18, 655373, 262145, 19, 589838, 327681, 18, 655374, 327681, 19, 655360, 1245185, 28, 655361, 1310721, 28, 655362, 1376257, 28, 655363, 1441793, 28, 655364, 1507329, 28, 655365, 1572865, 28, 720896, 1245185, 29, 720897, 1310721, 29, 720898, 1376257, 29, 720899, 1441793, 29, 720900, 1507329, 29, 720901, 1572865, 29, 720912, 1179649, 12, 720902, 1179649, 12, 720903, 1245185, 12, 786430, 1245185, 12)
 metadata/_edit_lock_ = true
 
-[node name="Bathroom" type="TileMap" parent="Parallax/ParallaxLayer_-1"]
+[node name="Bathroom" type="TileMap" parent="Parallax/ParallaxLayer_0"]
 clip_children = 2
 light_mask = 3
 z_index = 1
@@ -2345,7 +2875,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array(327673, 524289, 0, 393209, 524289, 1, 327674, 589825, 0, 393210, 589825, 1, 327675, 655361, 0, 393211, 655361, 1, 327676, 720897, 0, 393212, 720897, 1, 327677, 786433, 0, 393213, 786433, 1, 327678, 851969, 0, 393214, 851969, 1, 458745, 524289, 4, 524281, 524289, 5, 458746, 589825, 4, 524282, 589825, 5, 458747, 655361, 4, 524283, 655361, 5, 458748, 720897, 4, 524284, 720897, 5, 458749, 786433, 4, 524285, 786433, 5, 458750, 851969, 4, 524286, 851969, 5)
+layer_1/tile_data = PackedInt32Array(458745, 524289, 0, 524281, 524289, 5, 458746, 589825, 0, 524282, 589825, 5, 458747, 655361, 0, 524283, 655361, 5, 458748, 720897, 0, 524284, 720897, 5, 458749, 786433, 0, 524285, 786433, 5, 458750, 851969, 0, 524286, 851969, 5)
 layer_2/name = "挂装1"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -2361,19 +2891,27 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array(458748, 393216, 3, 524284, 393216, 3, 589820, 393216, 4, 655356, 393216, 5, 458749, 458752, 4, 524285, 458752, 3, 589821, 458752, 4, 655357, 458752, 5, 458750, 524288, 4, 524286, 524288, 3, 589822, 524288, 4, 655358, 524288, 5, 393213, 458752, 2, 393214, 524288, 2, 393212, 393216, 2)
 
-[node name="ParallaxLayer_0" type="Node2D" parent="Parallax"]
+[node name="ParallaxLayer_1" type="Node2D" parent="Parallax"]
 clip_children = 1
 light_mask = 2
 
-[node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_0"]
+[node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_1"]
 z_index = 7
 z_as_relative = false
 position = Vector2(60, 164.514)
 tile_set = SubResource("TileSet_wf0o0")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131075, 1, 15, -65539, 1, 16, -131074, 65537, 15, -65538, 65537, 16, -131073, 131073, 15, -65537, 131073, 16, -196608, 196609, 15, -131072, 196609, 16, -196607, 262145, 15, -131071, 262145, 16, -196606, 327681, 15, -131070, 327681, 16, -65530, 1179649, 23, -65529, 1245185, 23, -65528, 1310721, 23, 65540, 1835009, 8, -6, 1572865, 12, 65530, 1572865, 13, 131066, 1572865, 14, -5, 1638401, 12, 65531, 1638401, 13, 131067, 1638401, 14, -4, 1703937, 12, 65532, 1703937, 13, 131068, 1703937, 14)
+layer_0/name = "1"
+layer_0/tile_data = PackedInt32Array(-131074, 1638401, 27, -65538, 1638401, 28, -196608, 1703937, 27, -131072, 1703937, 28)
+layer_1/name = "2"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-65530, 1179649, 23, -65529, 1245185, 23, -65528, 1310721, 23, 65540, 1835009, 8, -6, 1572865, 12, 65530, 1572865, 13, 131066, 1572865, 14, -5, 1638401, 12, 65531, 1638401, 13, 131067, 1638401, 14, -4, 1703937, 12, 65532, 1703937, 13, 131068, 1703937, 14, -196602, 1, 15, -131066, 1, 16, -196601, 65537, 15, -131065, 65537, 16, -196600, 131073, 15, -131064, 131073, 16, -196599, 196609, 15, -131063, 196609, 16, -196598, 262145, 15, -131062, 262145, 16, -196597, 327681, 15, -131061, 327681, 16, -131072, 1769473, 28)
 
-[node name="Bathroom" type="TileMap" parent="Parallax/ParallaxLayer_0"]
+[node name="Bathroom" type="TileMap" parent="Parallax/ParallaxLayer_1"]
 clip_children = 2
 light_mask = 3
 z_index = 22
@@ -2404,7 +2942,7 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
-[node name="Wall" type="TileMap" parent="Parallax/ParallaxLayer_0"]
+[node name="Wall" type="TileMap" parent="Parallax/ParallaxLayer_1"]
 light_mask = 0
 z_index = 28
 position = Vector2(-0.418824, -25.8179)
@@ -2412,7 +2950,7 @@ tile_set = SubResource("TileSet_f7pou")
 format = 2
 layer_0/tile_data = PackedInt32Array(393214, 524288, 0, 458750, 524288, 0, 524286, 524288, 0, 589822, 524288, 0, 655358, 524288, 0, 196604, 393216, 0, 262140, 393216, 1, 196605, 458752, 0, 262141, 458752, 1, 327678, 524288, 0, 262142, 524288, 0, 196606, 524288, 0)
 
-[node name="reflection" type="Sprite2D" parent="Parallax/ParallaxLayer_0"]
+[node name="reflection" type="Sprite2D" parent="Parallax/ParallaxLayer_1"]
 light_mask = 2
 z_index = 21
 material = SubResource("ShaderMaterial_fn6fl")
@@ -2423,9 +2961,9 @@ region_enabled = true
 region_rect = Rect2(107, 48, 27, 48)
 script = ExtResource("18_egn5g")
 
-[node name="ParallaxLayer_1" type="Node2D" parent="Parallax"]
+[node name="ParallaxLayer_2" type="Node2D" parent="Parallax"]
 
-[node name="Label" type="Label" parent="Parallax/ParallaxLayer_1"]
+[node name="Label" type="Label" parent="Parallax/ParallaxLayer_2"]
 light_mask = 2051
 z_index = 15
 offset_left = 123.235
@@ -2442,10 +2980,10 @@ visible_ratio = 0.625
 script = ExtResource("7_382jj")
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="Parallax/ParallaxLayer_1/Label"]
+[node name="Timer" type="Timer" parent="Parallax/ParallaxLayer_2/Label"]
 autostart = true
 
-[node name="Bathroom" type="TileMap" parent="Parallax/ParallaxLayer_1"]
+[node name="Bathroom" type="TileMap" parent="Parallax/ParallaxLayer_2"]
 clip_children = 2
 light_mask = 3
 z_index = 22
@@ -2476,7 +3014,7 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
-[node name="BathroomLight" type="PointLight2D" parent="Parallax/ParallaxLayer_1"]
+[node name="BathroomLight" type="PointLight2D" parent="Parallax/ParallaxLayer_2"]
 light_mask = 2
 z_index = 1
 position = Vector2(-105.502, -20.7672)
@@ -2486,12 +3024,12 @@ energy = 1.1
 range_z_max = 35
 range_item_cull_mask = 2
 shadow_enabled = true
-texture = ExtResource("14_ju4y7")
+texture = ExtResource("24_bxesw")
 offset = Vector2(22.1745, 169.364)
 texture_scale = 0.27
 script = ExtResource("15_ikj5h")
 
-[node name="MainLight" type="PointLight2D" parent="Parallax/ParallaxLayer_1"]
+[node name="MainLight" type="PointLight2D" parent="Parallax/ParallaxLayer_2"]
 unique_name_in_owner = true
 z_index = 6
 position = Vector2(317.365, -118.121)
@@ -2500,22 +3038,21 @@ energy = 1.5
 range_z_max = 50
 shadow_enabled = true
 shadow_color = Color(0.439216, 0.6, 0.615686, 0.0352941)
-texture = ExtResource("2_cdbyy")
+texture = ExtResource("26_q2kh1")
 offset = Vector2(-572.345, 1099.41)
 script = ExtResource("3_can47")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Parallax/ParallaxLayer_1/MainLight"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Parallax/ParallaxLayer_2/MainLight"]
 autoplay = "新建动画 (2)"
 libraries = {
 "": SubResource("AnimationLibrary_au1sb")
 }
 
-[node name="bedroom_bathroom" type="TileMap" parent="Parallax/ParallaxLayer_1"]
+[node name="bedroom_bathroom" type="TileMap" parent="Parallax/ParallaxLayer_2"]
 light_mask = 3
 z_index = 10
 z_as_relative = false
 position = Vector2(57, 212.474)
-scale = Vector2(1, 1)
 tile_set = SubResource("TileSet_43l1y")
 format = 2
 layer_0/name = "1"
@@ -2528,7 +3065,7 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(-131068, 1835008, 9, -196614, 1376256, 12, -131078, 1376256, 13, -65542, 1376256, 14, -196613, 1441792, 12, -131077, 1441792, 13, -65541, 1441792, 14, -196612, 1507328, 12, -131076, 1507328, 13, -65540, 1507328, 14)
 
-[node name="DeskLight" type="PointLight2D" parent="Parallax/ParallaxLayer_1"]
+[node name="DeskLight" type="PointLight2D" parent="Parallax/ParallaxLayer_2"]
 visible = false
 light_mask = 2048
 position = Vector2(215.472, 146.514)
@@ -2536,31 +3073,39 @@ scale = Vector2(0.294299, 0.297707)
 color = Color(1, 0.698039, 0.498039, 1)
 energy = 0.28
 range_z_max = 21
-texture = ExtResource("15_dbnq2")
+texture = ExtResource("28_5lw1p")
 script = ExtResource("16_uy2ig")
 metadata/_edit_group_ = true
 
-[node name="DeskLightBackground" type="PointLight2D" parent="Parallax/ParallaxLayer_1/DeskLight"]
+[node name="DeskLightBackground" type="PointLight2D" parent="Parallax/ParallaxLayer_2/DeskLight"]
 light_mask = 2049
 position = Vector2(16.1132, 80.6895)
 scale = Vector2(0.603031, 0.662432)
 color = Color(1, 0.698039, 0.498039, 1)
 range_z_max = 24
-texture = ExtResource("13_3dtfp")
+texture = ExtResource("18_uybat")
 texture_scale = 1.17
 
-[node name="Area2D" type="Area2D" parent="Parallax/ParallaxLayer_1/DeskLight"]
+[node name="Area2D" type="Area2D" parent="Parallax/ParallaxLayer_2/DeskLight"]
 position = Vector2(-88.8323, -0.97467)
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_1/DeskLight/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_2/DeskLight/Area2D"]
 position = Vector2(42.4778, 159.308)
 shape = SubResource("RectangleShape2D_05ce4")
 
-[node name="ParallaxLayer_2" type="Node2D" parent="Parallax"]
+[node name="ColorRect" type="ColorRect" parent="Parallax/ParallaxLayer_2"]
+z_index = 10
+material = ExtResource("30_xm0o4")
+offset_left = -24.0
+offset_top = 166.0
+offset_right = -6.0
+offset_bottom = 182.0
 
-[node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_2"]
+[node name="ParallaxLayer_3" type="Node2D" parent="Parallax"]
+
+[node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_3"]
 z_index = 7
 z_as_relative = false
 position = Vector2(55, 212.474)
@@ -2568,15 +3113,32 @@ tile_set = SubResource("TileSet_43l1y")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131075, 393216, 21, -65539, 393216, 22, -3, 393216, 23, -131074, 458752, 21, -65538, 458752, 22, -2, 458752, 23, -131073, 524288, 21, -65537, 524288, 22, -1, 524288, 23, -196608, 589824, 21, -131072, 589824, 22, -65536, 589824, 23, -196607, 655360, 21, -131071, 655360, 22, -65535, 655360, 23, -196606, 720896, 21, -131070, 720896, 22, -65534, 720896, 23, -262138, 786432, 23, -196602, 786432, 24, -131066, 786432, 25, -65530, 786432, 26, -262137, 851968, 23, -196601, 851968, 24, -131065, 851968, 25, -65529, 851968, 26, -262136, 917504, 23, -196600, 917504, 24, -131064, 917504, 25, -65528, 917504, 26, -262135, 983040, 23, -196599, 983040, 24, -131063, 983040, 25, -65527, 983040, 26, -262134, 1048576, 23, -196598, 1048576, 24, -131062, 1048576, 25, -65526, 1048576, 26, -262133, 1114112, 23, -196597, 1114112, 24, -131061, 1114112, 25, -65525, 1114112, 26)
 
-[node name="ParallaxLayer_3" type="Node2D" parent="Parallax"]
+[node name="ParallaxLayer_4" type="Node2D" parent="Parallax"]
 
-[node name="SleepLight2" type="Area2D" parent="Parallax/ParallaxLayer_3"]
+[node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_4"]
+z_index = 21
+position = Vector2(-54.4595, 0)
+tile_set = SubResource("TileSet_c7r7c")
+format = 2
+layer_0/name = "0"
+layer_0/tile_data = PackedInt32Array(327683, 1507328, 23, 393219, 1507328, 24, 458755, 1507328, 24, 524291, 1572864, 25, 262147, 1507328, 22, 589827, 1572864, 26)
+layer_1/name = "1"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(65538, 1572864, 22, 131074, 1572864, 23, 196610, 1572864, 23, 262146, 1572864, 24, 262158, 1769472, 24, 196622, 1769472, 23, 131086, 1769472, 23, 65550, 1769472, 22, 262147, 1638400, 24, 262148, 1703936, 24, 262149, 1638400, 24, 262150, 1703936, 24, 262151, 1638400, 24, 262152, 1703936, 24, 262153, 1638400, 24, 262154, 1703936, 24, 262155, 1638400, 24, 262156, 1703936, 24, 262157, 1638400, 24)
+
+[node name="ParallaxLayer_5" type="Node2D" parent="Parallax"]
+
+[node name="SleepLight2" type="Area2D" parent="Parallax/ParallaxLayer_5"]
 z_index = 17
 position = Vector2(-58.9382, -31.676)
 collision_mask = 2
 script = ExtResource("10_0vqnu")
 
-[node name="SleepLight" type="PointLight2D" parent="Parallax/ParallaxLayer_3/SleepLight2"]
+[node name="SleepLight" type="PointLight2D" parent="Parallax/ParallaxLayer_5/SleepLight2"]
 visible = false
 position = Vector2(78.6785, 196.19)
 scale = Vector2(0.63, 0.63)
@@ -2584,23 +3146,23 @@ color = Color(1, 0.635294, 0.32549, 1)
 energy = 1.1
 range_z_max = 27
 shadow_enabled = true
-texture = ExtResource("17_t6pf2")
+texture = ExtResource("32_38qbr")
 offset = Vector2(-0.920097, -3.21558)
 texture_scale = 1.35
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Parallax/ParallaxLayer_3/SleepLight2/SleepLight"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Parallax/ParallaxLayer_5/SleepLight2/SleepLight"]
 autoplay = "新建动画"
 libraries = {
 "": SubResource("AnimationLibrary_neq83")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_3/SleepLight2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_5/SleepLight2"]
 z_index = 1
 position = Vector2(78.6785, 196.215)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_8vp03")
 
-[node name="outline" type="Sprite2D" parent="Parallax/ParallaxLayer_3/SleepLight2"]
+[node name="outline" type="Sprite2D" parent="Parallax/ParallaxLayer_5/SleepLight2"]
 visible = false
 light_mask = 1027
 z_index = 7
@@ -2612,7 +3174,7 @@ region_enabled = true
 region_rect = Rect2(482, 48, 30, 241)
 script = ExtResource("15_o7e8p")
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax/ParallaxLayer_3/SleepLight2"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax/ParallaxLayer_5/SleepLight2"]
 light_mask = 3
 z_index = 7
 position = Vector2(78.3635, 119.54)
@@ -2645,9 +3207,9 @@ region_rect = Rect2(48, 336, 48, 48)
 [node name="DarkBoundry3" type="Sprite2D" parent="DarkBoundry"]
 light_mask = 4
 z_index = 100
-position = Vector2(534.084, 101.662)
+position = Vector2(578.317, 101.662)
 rotation = 1.5708
-scale = Vector2(9.20798, 1.6553)
+scale = Vector2(9.20798, 3.49833)
 texture = ExtResource("1_nd1w2")
 region_enabled = true
 region_rect = Rect2(48, 336, 48, 48)
@@ -2658,7 +3220,7 @@ layer = 101
 
 [node name="Camera2D" type="Camera2D" parent="."]
 material = SubResource("ShaderMaterial_3b2nd")
-position = Vector2(323.25, 133.5)
+position = Vector2(464.25, 133.474)
 scale = Vector2(0.9, 0.9)
 current = true
 drag_horizontal_enabled = true
@@ -2745,32 +3307,33 @@ visibility_mode = 1
 position = Vector2(-173, -56)
 
 [connection signal="change_background_light" from="." to="Light/BackgroudLight" method="_on_bedroom_change_background_light"]
-[connection signal="change_bathroom_light_enegy" from="." to="Parallax/ParallaxLayer_1/BathroomLight" method="_on_bedroom_change_bathroom_light_enegy"]
-[connection signal="change_desk_light" from="." to="Parallax/ParallaxLayer_1/DeskLight" method="_on_bedroom_change_desk_light"]
+[connection signal="change_bathroom_light_enegy" from="." to="Parallax/ParallaxLayer_2/BathroomLight" method="_on_bedroom_change_bathroom_light_enegy"]
+[connection signal="change_desk_light" from="." to="Parallax/ParallaxLayer_2/DeskLight" method="_on_bedroom_change_desk_light"]
 [connection signal="change_heighlight" from="." to="Light/HeighLight" method="_on_bedroom_change_heighlight"]
-[connection signal="change_logo_light" from="." to="Parallax/ParallaxLayer_-1/LogoLight" method="_on_bedroom_change_logo_light"]
-[connection signal="change_main_light" from="." to="Parallax/ParallaxLayer_1/MainLight" method="_on_bedroom_change_main_light"]
-[connection signal="change_mirror" from="." to="Parallax/ParallaxLayer_0/reflection" method="_on_bedroom_change_mirror"]
-[connection signal="change_mirror_mix_value" from="." to="Parallax/ParallaxLayer_0/reflection" method="_on_bedroom_change_mirror_mix_value"]
-[connection signal="change_sleep_light" from="." to="Parallax/ParallaxLayer_3/SleepLight2" method="_on_bedroom_change_sleep_light"]
+[connection signal="change_logo_light" from="." to="Parallax/ParallaxLayer_0/LogoLight" method="_on_bedroom_change_logo_light"]
+[connection signal="change_main_light" from="." to="Parallax/ParallaxLayer_2/MainLight" method="_on_bedroom_change_main_light"]
+[connection signal="change_mirror" from="." to="Parallax/ParallaxLayer_1/reflection" method="_on_bedroom_change_mirror"]
+[connection signal="change_mirror_mix_value" from="." to="Parallax/ParallaxLayer_1/reflection" method="_on_bedroom_change_mirror_mix_value"]
+[connection signal="change_sleep_light" from="." to="Parallax/ParallaxLayer_5/SleepLight2" method="_on_bedroom_change_sleep_light"]
 [connection signal="change_worldEnvironment_exposure_white" from="." to="WorldEnvironment" method="_on_bedroom_change_world_environment_exposure_white"]
 [connection signal="player_enter_bathroom" from="." to="Player" method="_on_bedroom_player_enter_bathroom"]
 [connection signal="player_leave_bathroom" from="." to="Player" method="_on_bedroom_player_leave_bathroom"]
+[connection signal="body_entered" from="bedroomTileMap/Sprite2D" to="." method="_on_sprite_2d_body_entered"]
 [connection signal="body_entered" from="Light/BedroomSwitch" to="Light/BedroomSwitch/outline" method="_on_bedroom_switch_body_entered"]
-[connection signal="body_entered" from="Light/BedroomSwitch" to="Parallax/ParallaxLayer_1/MainLight" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Light/BedroomSwitch" to="Parallax/ParallaxLayer_2/MainLight" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Light/BedroomSwitch" to="Light/BedroomSwitch/outline" method="_on_bedroom_switch_body_exited"]
-[connection signal="body_exited" from="Light/BedroomSwitch" to="Parallax/ParallaxLayer_1/MainLight" method="_on_area_2d_body_exited"]
+[connection signal="body_exited" from="Light/BedroomSwitch" to="Parallax/ParallaxLayer_2/MainLight" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Light/BathroomSwitch" to="Light/BathroomSwitch/outline" method="_on_bathroom_switch_body_entered"]
-[connection signal="body_entered" from="Light/BathroomSwitch" to="Parallax/ParallaxLayer_1/BathroomLight" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Light/BathroomSwitch" to="Parallax/ParallaxLayer_2/BathroomLight" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Light/BathroomSwitch" to="Light/BathroomSwitch/outline" method="_on_bathroom_switch_body_exited"]
-[connection signal="body_exited" from="Light/BathroomSwitch" to="Parallax/ParallaxLayer_1/BathroomLight" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Parallax/ParallaxLayer_-1/Bathroom_Area" to="Parallax/ParallaxLayer_-1/Bathroom_Area" method="_on_body_entered"]
-[connection signal="timeout" from="Parallax/ParallaxLayer_1/Label/Timer" to="Parallax/ParallaxLayer_1/Label" method="_on_timer_timeout"]
-[connection signal="visibility_changed" from="Parallax/ParallaxLayer_1/BathroomLight" to="Parallax/ParallaxLayer_1/BathroomLight" method="_on_visibility_changed"]
-[connection signal="visibility_changed" from="Parallax/ParallaxLayer_1/MainLight" to="Parallax/ParallaxLayer_1/MainLight" method="_on_visibility_changed"]
-[connection signal="body_entered" from="Parallax/ParallaxLayer_1/DeskLight/Area2D" to="Parallax/ParallaxLayer_1/DeskLight" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Parallax/ParallaxLayer_1/DeskLight/Area2D" to="Parallax/ParallaxLayer_1/DeskLight" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Parallax/ParallaxLayer_3/SleepLight2" to="Parallax/ParallaxLayer_3/SleepLight2" method="_on_body_entered"]
-[connection signal="body_entered" from="Parallax/ParallaxLayer_3/SleepLight2" to="Parallax/ParallaxLayer_3/SleepLight2/outline" method="_on_sleep_light_2_body_entered"]
-[connection signal="body_exited" from="Parallax/ParallaxLayer_3/SleepLight2" to="Parallax/ParallaxLayer_3/SleepLight2" method="_on_body_exited"]
-[connection signal="body_exited" from="Parallax/ParallaxLayer_3/SleepLight2" to="Parallax/ParallaxLayer_3/SleepLight2/outline" method="_on_sleep_light_2_body_exited"]
+[connection signal="body_exited" from="Light/BathroomSwitch" to="Parallax/ParallaxLayer_2/BathroomLight" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Parallax/ParallaxLayer_0/Bathroom_Area" to="Parallax/ParallaxLayer_0/Bathroom_Area" method="_on_body_entered"]
+[connection signal="timeout" from="Parallax/ParallaxLayer_2/Label/Timer" to="Parallax/ParallaxLayer_2/Label" method="_on_timer_timeout"]
+[connection signal="visibility_changed" from="Parallax/ParallaxLayer_2/BathroomLight" to="Parallax/ParallaxLayer_2/BathroomLight" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Parallax/ParallaxLayer_2/MainLight" to="Parallax/ParallaxLayer_2/MainLight" method="_on_visibility_changed"]
+[connection signal="body_entered" from="Parallax/ParallaxLayer_2/DeskLight/Area2D" to="Parallax/ParallaxLayer_2/DeskLight" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Parallax/ParallaxLayer_2/DeskLight/Area2D" to="Parallax/ParallaxLayer_2/DeskLight" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2" method="_on_body_entered"]
+[connection signal="body_entered" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2/outline" method="_on_sleep_light_2_body_entered"]
+[connection signal="body_exited" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2" method="_on_body_exited"]
+[connection signal="body_exited" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2/outline" method="_on_sleep_light_2_body_exited"]

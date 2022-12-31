@@ -24,6 +24,16 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://core/script/world/EnvironmentKill.gd"
 }, {
+"base": "Node2D",
+"class": &"Flame",
+"language": &"GDScript",
+"path": "res://core/script/world/flame.gd"
+}, {
+"base": "Node2D",
+"class": &"Flame_Burst",
+"language": &"GDScript",
+"path": "res://TEST/flame.gd"
+}, {
 "base": "BaseState",
 "class": &"GroundState",
 "language": &"GDScript",
@@ -58,6 +68,8 @@ _global_script_class_icons={
 "AirState": "",
 "BaseState": "",
 "EnvironmentKills": "",
+"Flame": "",
+"Flame_Burst": "",
 "GroundState": "",
 "InteractiveState": "",
 "JumpState": "",
@@ -69,15 +81,16 @@ _global_script_class_icons={
 [application]
 
 config/name="ifrit"
-run/main_scene="res://core/scene/world/bedroom.tscn"
+run/main_scene="res://core/scene/world/training room.tscn"
 config/features=PackedStringArray("4.0")
+boot_splash/bg_color=Color(0.117647, 0.215686, 0.14902, 1)
 config/icon="res://icon.png"
 
 [autoload]
 
 Globle="*res://core/script/Globle.gd"
 EventBus="*res://core/script/EventBus.gd"
-SoundPlayer="*res://core/scene/SoundPlayer.tscn"
+SoundPlayer="*res://core/scene/common/SoundPlayer.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogue_manager]
@@ -191,6 +204,8 @@ pointing/emulate_mouse_from_touch=false
 2d_physics/layer_3="ladder"
 2d_physics/layer_4="environment_kills"
 2d_physics/layer_9="enemey"
+2d_physics/layer_13="gameplay_cube"
+2d_physics/layer_14="gameplay_file"
 
 [physics]
 
@@ -200,6 +215,7 @@ common/enable_pause_aware_picking=true
 
 textures/decals/filter=0
 textures/light_projectors/filter=0
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 textures/canvas_textures/default_texture_filter=0
 2d/snapping/use_gpu_pixel_snap=true
+environment/main_scene="res://core/scene/world/bedroom.tscn"
+environment/size/always_on_top=false

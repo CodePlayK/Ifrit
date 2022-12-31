@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdwl2u5dayeni"]
+[gd_scene load_steps=5 format=3 uid="uid://bkqevvkpjuxuj"]
 
-[ext_resource type="Texture2D" uid="uid://eu8kr5p5tjtr" path="res://core/resource/world/tiles_packed.png" id="1_rkl1a"]
+[ext_resource type="Texture2D" uid="uid://eu8kr5p5tjtr" path="res://TEST/tiles_packed.png" id="1_rkl1a"]
 [ext_resource type="Script" path="res://core/script/world/ladder.gd" id="2_m68fd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35qp0"]
