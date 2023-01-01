@@ -26,9 +26,7 @@ extends Node2D
 @export var flame_wave_size_2:Vector2=Vector2(1,1.3)
 @export var routate_speed_2:float=.1
 
-@export_group("burst_settings")
 #触碰哪一侧的界限(1=上，2=右，3=下，4=左)/复制哪一层的背景火焰颜色（0、1、2）/
-@export var burst_setting:Array[Array]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	change_background_flames()
@@ -52,14 +50,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://core/scene/world/bedroom.tscn")
 	pass # Replace with function body.
 
-
-func _on_timer_2_timeout() -> void:
-	EventBus.emit_signal("burst_flame_wave",burst_setting)
-	pass # Replace with function body.
-
 func change_background_flames():
 	if equal_to_front:wave_center_color=wave_color_2
 	#初始旋转位置，火浪速度，线条粗细，火浪长度，火浪颜色，第几层，中央颜色，旋转速度
 	EventBus.emit_signal("change_flames",flame_rotation_0,flame_wave_speed_0,flame_line_0,flame_wave_size_0,wave_color_0,"0",wave_center_color,routate_speed_0)
 	EventBus.emit_signal("change_flames",flame_rotation_1,flame_wave_speed_1,flame_line_1,flame_wave_size_1,wave_color_1,"1",wave_center_color,routate_speed_1)
 	EventBus.emit_signal("change_flames",flame_rotation_2,flame_wave_speed_2,flame_line_2,flame_wave_size_2,wave_color_2,"2",wave_center_color,routate_speed_2)
+
+

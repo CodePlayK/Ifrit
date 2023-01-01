@@ -18,6 +18,9 @@ signal change_heighlight(state)
 signal change_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer_name,wave_center_color,routate_speed)
 signal burst_flame_wave(burst_setting)
 signal flame_touch_box(mask)
+signal flame_left_box(mask)
+signal flame_left_box_result(result)
+signal clear_result()
 
 func _ready():
 	pass

@@ -4,6 +4,11 @@ var burst_flame
 var ray_list:Array
 var flame_list:Array
 
+var success:int
+var too_soon:int
+var too_late:int
+var miss:int
+
 @export var wave_color_defalut:Color
 @export var flame_center_scale:float=1.0
 @onready var wave=$wave
@@ -13,12 +18,16 @@ var flame_list:Array
 @onready var talk=$"wave/aniplayer_talk"
 @onready var aniplayer_burst_flame=$"burst_wave/aniplayer_burst_flame"
 @onready var burst=$"burst_wave/burst"
+@onready var label=$"Label"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventBus.connect("change_flames",Callable(self,"_on_change_flames"))
 	EventBus.connect("burst_flame_wave",Callable(self,"_on_burst_flame_wave"))
 	EventBus.connect("flame_touch_box",Callable(self,"_on_flame_touch_box"))
+	EventBus.connect("flame_left_box",Callable(self,"_on_flame_left_box"))
+	EventBus.connect("flame_left_box_result",Callable(self,"_on_flame_left_box_result"))
+	EventBus.connect("clear_result",Callable(self,"_on_clear_result"))
 	poly_flame=preload("res://core/scene/world/flame.tscn")
 	burst_flame=preload("res://core/scene/world/flame_burst.tscn" )
 	for i in range(0,20):
@@ -54,6 +63,11 @@ func make_burst_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer
 	flame.wave_speed=wave_speed
 	#设置碰撞层
 	flame.mask=cube_side
+	match cube_side-12:
+		1:flame.side="ui_up"
+		2:flame.side="ui_right"
+		3:flame.side="ui_down"
+		4:flame.side="ui_left"
 	flame.get_node("sprit").material.set_shader_parameter("color",Vector4(color.r,color.g,color.b,color.a))
 	#flame.get_node("RayCast2D").set_collision_mask_value(cube_side,true)
 	flame.set_scale(Vector2(1.0,y_scale))
@@ -82,9 +96,6 @@ func change_flame(routate_range:Vector2,wave_speed:Vector2,line:Vector2,y_scale:
 		if y_scale!=Vector2.ZERO:
 			flame.set_scale(Vector2(1.0,randf_range(y_scale.x,y_scale.y)))
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("hit!")
-	pass # Replace with function body.
 
 func _on_change_flames(routate_range:Vector2,wave_speed:Vector2,line:Vector2,y_scale,color,layer_name,wave_center_color,routate_speed):
 	var layer=wave.find_child(layer_name)
@@ -92,39 +103,57 @@ func _on_change_flames(routate_range:Vector2,wave_speed:Vector2,line:Vector2,y_s
 	var center_color_v4=Vector4(wave_center_color.r,wave_center_color.g,wave_center_color.b,wave_center_color.a)
 	change_flame(routate_range,wave_speed,line,y_scale,color_v4,layer,center_color_v4,routate_speed)
 
-func _on_burst_flame_wave(burst_setting):
+func _on_burst_flame_wave(side,copy_layer):
 	var burst_vec=Vector2.ZERO
 	var layer
 	var color
 	var color1:Color
-	for burst_set in burst_setting:
-		#四边有效象限
-		match burst_set[0]:
-			1:
-				burst_vec=Vector2(-35,35)
-			2:
-				burst_vec=Vector2(55,125)
-			3:
-				burst_vec=Vector2(145,215)
-			4:
-				burst_vec=Vector2(-55,-125)
-		#获取对应背景层颜色
-		layer=wave.find_child(str(burst_set[1]))
-		var flames=	layer.get_children()
-		for flame in flames:
-			if flame is Flame:
-				color=flame.get_node("sprit").material.get_shader_parameter("color")
-				break
-		#Color转为shader的vec4向量
-		color1.r=color.x
-		color1.g=color.y
-		color1.b=color.z
-		color1.a=color.w
-		#旋转角度,波速度,线粗细,波长度,颜色,图层，碰撞mark
-		make_burst_flames(burst_vec,randf_range(2.3,3.0),randf_range(2,2),randf_range(2.5,3),color1,burst,burst_set[0]+12)
-		aniplayer_burst_flame.play("rotate")
+	#四边有效象限
+	match side:
+		1:
+			burst_vec=Vector2(-35,35)
+		2:
+			burst_vec=Vector2(55,125)
+		3:
+			burst_vec=Vector2(145,215)
+		4:
+			burst_vec=Vector2(-55,-125)
+	#获取对应背景层颜色
+	layer=wave.find_child(str(copy_layer))
+	var flames=	layer.get_children()
+	for flame in flames:
+		if flame is Flame:
+			color=flame.get_node("sprit").material.get_shader_parameter("color")
+			break
+	#Color转为shader的vec4向量
+	color1.r=color.x
+	color1.g=color.y
+	color1.b=color.z
+	color1.a=color.w
+	#旋转角度,波速度,线粗细,波长度,颜色,图层，碰撞mark
+	make_burst_flames(burst_vec,randf_range(1,5),randf_range(2,2),randf_range(2.5,3.5),color1,burst,side+12)
+	aniplayer_burst_flame.play("rotate")
 	pass
 
 func _on_flame_touch_box(mask) -> void:
 	print("接触"+str(mask))
-	pass # Replace with function body.
+	pass
+
+func _on_flame_left_box(mask) -> void:
+	print("离开"+str(mask))
+	pass
+func _on_flame_left_box_result(result) -> void:
+	match result:
+		"too_soon":too_soon+=1
+		"too_late":too_late+=1
+		"miss":miss+=1
+		"success":success+=1
+	label.text="收容:"+str(success)+"\n过快:"+str(too_soon)+"\n过慢:"+str(too_late)+"\nMISS:"+str(miss)
+	pass
+func _on_clear_result() -> void:
+	too_soon=0
+	too_late=0
+	miss=0
+	success=0
+	label.text="收容:"+str(success)+"\n过快:"+str(too_soon)+"\n过慢:"+str(too_late)+"\nMISS:"+str(miss)
+	pass
