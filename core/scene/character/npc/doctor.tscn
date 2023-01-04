@@ -1,0 +1,118 @@
+[gd_scene load_steps=25 format=3 uid="uid://chyuui4qtstj8"]
+
+[ext_resource type="Texture2D" uid="uid://c6jjrauwwekld" path="res://core/resource/character/npc/doctor.png" id="1_76oba"]
+[ext_resource type="Script" path="res://core/script/state_machine/state_manager.gd" id="2_s21e6"]
+[ext_resource type="Script" path="res://core/script/state_machine/base_state.gd" id="3_8pmja"]
+[ext_resource type="Script" path="res://core/script/state_machine/idle.gd" id="4_6x0e3"]
+[ext_resource type="Script" path="res://core/script/state_machine/jump.gd" id="5_m5kro"]
+[ext_resource type="Script" path="res://core/script/state_machine/double_jump.gd" id="6_80vo7"]
+[ext_resource type="Script" path="res://core/script/state_machine/ground.gd" id="7_7sonk"]
+[ext_resource type="Script" path="res://core/script/state_machine/walk.gd" id="8_c77gy"]
+[ext_resource type="Script" path="res://core/script/state_machine/run.gd" id="9_5hgxg"]
+[ext_resource type="Script" path="res://core/script/state_machine/dash.gd" id="10_48va1"]
+[ext_resource type="Script" path="res://core/script/state_machine/air.gd" id="11_6hhkg"]
+[ext_resource type="Script" path="res://core/script/state_machine/lift.gd" id="12_qgw4o"]
+[ext_resource type="Script" path="res://core/script/state_machine/fall.gd" id="13_2njun"]
+[ext_resource type="Script" path="res://core/script/state_machine/landing.gd" id="14_mdco7"]
+[ext_resource type="Script" path="res://core/script/state_machine/interactive.gd" id="15_ngc7v"]
+[ext_resource type="Script" path="res://core/script/state_machine/climb.gd" id="16_8ws71"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qxgp"]
+atlas = ExtResource("1_76oba")
+region = Rect2(440, 128, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5nnd"]
+atlas = ExtResource("1_76oba")
+region = Rect2(400, 128, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljhss"]
+atlas = ExtResource("1_76oba")
+region = Rect2(400, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfwf4"]
+atlas = ExtResource("1_76oba")
+region = Rect2(360, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73evt"]
+atlas = ExtResource("1_76oba")
+region = Rect2(320, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfuhv"]
+atlas = ExtResource("1_76oba")
+region = Rect2(280, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0ver"]
+atlas = ExtResource("1_76oba")
+region = Rect2(240, 0, 40, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntfuf"]
+animations = [{
+"frames": [SubResource("AtlasTexture_4qxgp"), SubResource("AtlasTexture_i5nnd")],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [SubResource("AtlasTexture_ljhss"), SubResource("AtlasTexture_tfwf4"), SubResource("AtlasTexture_73evt"), SubResource("AtlasTexture_lfuhv"), SubResource("AtlasTexture_f0ver")],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Doctor" type="Node2D"]
+z_index = 23
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 3
+frames = SubResource("SpriteFrames_ntfuf")
+animation = &"idle"
+playing = true
+
+[node name="state_manager" type="Node" parent="." node_paths=PackedStringArray("starting_node")]
+script = ExtResource("2_s21e6")
+starting_node = NodePath("base/air/lift")
+state_machine_sript_path = "res://core/script/state_machine/"
+
+[node name="base" type="Node" parent="state_manager"]
+script = ExtResource("3_8pmja")
+
+[node name="idle" type="Node" parent="state_manager/base"]
+script = ExtResource("4_6x0e3")
+
+[node name="jump" type="Node" parent="state_manager/base"]
+script = ExtResource("5_m5kro")
+
+[node name="double_jump" type="Node" parent="state_manager/base/jump"]
+script = ExtResource("6_80vo7")
+
+[node name="ground" type="Node" parent="state_manager/base"]
+script = ExtResource("7_7sonk")
+
+[node name="walk" type="Node" parent="state_manager/base/ground"]
+script = ExtResource("8_c77gy")
+
+[node name="run" type="Node" parent="state_manager/base/ground"]
+script = ExtResource("9_5hgxg")
+
+[node name="dash" type="Node" parent="state_manager/base/ground"]
+script = ExtResource("10_48va1")
+dash_time = 0.2
+
+[node name="air" type="Node" parent="state_manager/base"]
+script = ExtResource("11_6hhkg")
+
+[node name="lift" type="Node" parent="state_manager/base/air"]
+script = ExtResource("12_qgw4o")
+
+[node name="fall" type="Node" parent="state_manager/base/air"]
+script = ExtResource("13_2njun")
+
+[node name="landing" type="Node" parent="state_manager/base/air"]
+script = ExtResource("14_mdco7")
+
+[node name="interactive" type="Node" parent="state_manager/base"]
+script = ExtResource("15_ngc7v")
+
+[node name="climb" type="Node" parent="state_manager/base/interactive"]
+script = ExtResource("16_8ws71")
+
+[connection signal="change_state_ui" from="state_manager" to="state_manager" method="_on_change_state_ui" flags=18]

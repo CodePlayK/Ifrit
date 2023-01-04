@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_3"
+type="Resource"
+uid="uid://cj0qv8klhhbjr"
+path="res://.godot/imported/0_0_bedroom.dialogue-70dfe6b7b193da308360767b635202dc.tres"
+
+[deps]
+
+source_file="res://core/dialog/cutscene/0_0_bedroom.dialogue"
+dest_files=["res://.godot/imported/0_0_bedroom.dialogue-70dfe6b7b193da308360767b635202dc.tres"]
+
+[params]
+
