@@ -39,7 +39,7 @@ func _ready() -> void:
 	for i in range(0,20):
 		#旋转角度,波速度,A线粗细,波长度,颜色,图层
 		make_flames(Vector2(-360,360),randf_range(1,2),randf_range(7,10),randf_range(1,1.4),wave_color_defalut,wave_2)
-	pass # Replace with function body.
+	pass
 
 
 func make_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer):

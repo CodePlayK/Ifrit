@@ -19,6 +19,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://core/script/state_machine/base_state.gd"
 }, {
+"base": "Resource",
+"class": &"DialogueResource",
+"language": &"GDScript",
+"path": "res://addons/dialogue_manager/dialogue_resource.gd"
+}, {
 "base": "TileMap",
 "class": &"EnvironmentKills",
 "language": &"GDScript",
@@ -67,6 +72,7 @@ _global_script_classes=[{
 _global_script_class_icons={
 "AirState": "",
 "BaseState": "",
+"DialogueResource": "res://addons/dialogue_manager/assets/icon.svg",
 "EnvironmentKills": "",
 "Flame": "",
 "Flame_Burst": "",
@@ -81,7 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ifrit"
-run/main_scene="res://core/scene/world/training room.tscn"
+run/main_scene="res://core/scene/world/bedroom.tscn"
 config/features=PackedStringArray("4.0")
 boot_splash/bg_color=Color(0.117647, 0.215686, 0.14902, 1)
 config/icon="res://icon.png"
@@ -102,8 +108,9 @@ missing_translations_are_errors=false
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=227
+window/size/viewport_width=360
+window/size/viewport_height=202
+window/size/always_on_top=true
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
@@ -235,6 +242,7 @@ common/enable_pause_aware_picking=true
 
 textures/decals/filter=0
 textures/light_projectors/filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 textures/canvas_textures/default_texture_filter=0
 2d/snapping/use_gpu_pixel_snap=true
 environment/main_scene="res://core/scene/world/bedroom.tscn"

@@ -123,10 +123,10 @@ func apply_acceleration(v):
 
 func _on_JumpBufferTimer_timeout():
 	buffer_jump_flag=false
-	pass # Replace with function body.
+	pass 
 func _on_EdgeJumpTimer_timeout():
 	edge_jump_flag=false
-	pass # Replace with function body.
+	pass 
 func is_change_state_to_CLIMB():
 	if is_on_ladder() and Input.is_action_pressed("ui_up"):
 		playerState=CLIMB
@@ -175,4 +175,4 @@ func player_dead():
 
 func _on_world_player_is_dead():
 	player_dead()
-	pass # Replace with function body.
+	pass 

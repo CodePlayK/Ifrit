@@ -49,3 +49,9 @@
 ~ on_gameplay
 按对应方向收容炎魔
 => END
+~ on_to_trainingroom
+要进入训练室吗？
+=> END
+~ on_to_corridor
+要进入走廊吗？
+=> END

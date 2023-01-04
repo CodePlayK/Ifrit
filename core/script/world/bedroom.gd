@@ -13,8 +13,11 @@ signal change_mirror(state)
 signal change_mirror_mix_value(state)
 signal change_heighlight(state)
 @export var day_light:bool=true
+@onready var mainLight=%MainLight
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	EventBus.emit_signal("transition_show","RIGHT_ENTER")
+	Globle.current_room="bedroom"
 	EventBus.connect("change_main_light",Callable(self,"_on_change_main_light"))
 	EventBus.connect("change_sleep_light",Callable(self,"_on_change_sleep_light"))
 	EventBus.connect("change_logo_light",Callable(self,"_on_change_logo_light"))
@@ -29,15 +32,11 @@ func _ready() -> void:
 	EventBus.connect("change_mirror_mix_value",Callable(self,"_on_change_mirror_mix_value"))
 	EventBus.connect("change_heighlight",Callable(self,"_on_change_heighlight"))
 
-	if day_light:
+	if day_light||Globle.bedroom_light_state:
 		on_daylight()
 	else :
 		on_nightlight()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_change_main_light(state):
 	emit_signal("change_main_light",state)
@@ -76,5 +75,9 @@ func _on_change_heighlight(state):
 
 
 func _on_sprite_2d_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://core/scene/world/training room.tscn")
-	pass # Replace with function body.
+	Globle.bedroom_light_state=mainLight.visible
+	EventBus.emit_signal("transition_show","RIGHT_LEFT")
+	await EventBus.transition_complete
+	EventBus.emit_signal("change_room","trainingroom")
+
+	pass

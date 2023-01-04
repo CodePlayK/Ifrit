@@ -14,7 +14,7 @@ var off_set=0
 func _ready() -> void:
 	start_position_x=position.x
 	player_last_position_x=get_player_position_x()
-	pass # Replace with function body.
+	pass 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

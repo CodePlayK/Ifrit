@@ -11,7 +11,7 @@ func _ready():
 	EventBus.connect("player_is_dead",Callable(self,"_on_player_is_dead"))
 	EventBus.connect("change_state_ui",Callable(self,"_on_change_state_ui"))
 	RenderingServer.set_default_clear_color(Color.LIGHT_BLUE)
-	pass # Replace with function body.
+	pass 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

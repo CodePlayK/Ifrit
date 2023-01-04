@@ -21,7 +21,13 @@ signal flame_touch_box(mask)
 signal flame_left_box(mask)
 signal flame_left_box_result(result)
 signal clear_result()
+signal change_room(room)
+signal transition_show(room)
+signal transition_complete()
 
-func _ready():
-	pass
+
+
+#cutscene
+signal bedroom_play_cutscene(sceneNum)
+
 

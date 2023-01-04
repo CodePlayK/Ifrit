@@ -32,11 +32,11 @@ static func get_user_config() -> Dictionary:
 		run_resource_path = "",
 		is_running_test_scene = false
 	}
-
+	
 	if FileAccess.file_exists(DialogueConstants.USER_CONFIG_PATH):
 		var file: FileAccess = FileAccess.open(DialogueConstants.USER_CONFIG_PATH, FileAccess.READ)
 		user_config.merge(JSON.parse_string(file.get_as_text()), true)
-
+	
 	return user_config
 
 
@@ -89,8 +89,8 @@ static func clear_recent_files() -> void:
 
 static func set_caret(path: String, cursor: Vector2) -> void:
 	var carets: Dictionary = get_user_value("carets", {})
-	carets[path] = {
-		x = cursor.x,
+	carets[path] = { 
+		x = cursor.x, 
 		y = cursor.y
 	}
 	set_user_value("carets", carets)

@@ -29,6 +29,9 @@ func init(player: Player) -> void:
 	change_state(starting_state)
 
 func physics_process(delta: float) -> void:
+	if Globle.player_movement_lcok:
+		on_player_lock()
+		return
 	var new_state = current_state.pre_physics_process(delta)
 	if !new_state:
 		new_state = current_state.physics_process(delta)
@@ -41,6 +44,9 @@ func physics_process(delta: float) -> void:
 	else :
 		change_state(new_state)
 func input(event: InputEvent) -> void:
+	if Globle.player_movement_lcok:
+		on_player_lock()
+		return
 	var new_state
 	if current_state:
 		new_state = current_state.input(event)
@@ -48,6 +54,9 @@ func input(event: InputEvent) -> void:
 		change_state(new_state)
 
 func process(delta: float) -> void:
+	if Globle.player_movement_lcok:
+		on_player_lock()
+		return
 	var new_state = current_state.process(delta)
 	if new_state:
 		change_state(new_state)
@@ -63,7 +72,9 @@ func print_a_to_b(a,b):
 	print(actual_string)
 	return actual_string
 
-
 func _on_change_state_ui():
 	EventBus.emit_signal("change_state_ui")
 	pass
+
+func on_player_lock():
+		change_state($base/idle)

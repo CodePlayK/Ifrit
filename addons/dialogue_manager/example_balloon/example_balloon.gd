@@ -6,13 +6,10 @@ extends CanvasLayer
 @onready var character_label: RichTextLabel = $Balloon/Margin/VBox/CharacterLabel
 @onready var dialogue_label := $Balloon/Margin/VBox/DialogueLabel
 @onready var responses_menu: VBoxContainer = $Balloon/Margin/VBox/Responses
-@onready var response_template: RichTextLabel = $Balloon/Margin/VBox/ResponseTemplate
+@onready var response_template: RichTextLabel = %ResponseTemplate
 
 ## The dialogue resource
-@export var resource: Resource=preload("res://core/dialog/test1.dialogue")
-@export var rset_when_finish: bool=false
-var is_talking: bool=false
-var enable:bool=true
+var resource: Resource
 
 ## Temporary game states
 var temporary_game_states: Array = []
@@ -24,8 +21,10 @@ var is_waiting_for_input: bool = false
 var dialogue_line: Dictionary:
 	set(next_dialogue_line):
 		is_waiting_for_input = false
+
 		if next_dialogue_line.size() == 0:
-			DialogueManager.emit_signal("dialogue_finished")
+			#queue_free()
+			balloon.hide()
 			return
 
 		# Remove any previous responses
@@ -85,19 +84,17 @@ var dialogue_line: Dictionary:
 
 func _ready() -> void:
 	response_template.hide()
-	hide()
+	balloon.hide()
 	balloon.custom_minimum_size.x = balloon.get_viewport_rect().size.x
-	DialogueManager.mutation.connect(_on_mutation)
-	DialogueManager.dialogue_finished.connect(_on_dialogue_finished)
 
+	DialogueManager.mutation.connect(_on_mutation)
 
 
 ## Start some dialogue
 func start(dialogue_resource: Resource, title: String, extra_game_states: Array = []) -> void:
-	show()
 	temporary_game_states = extra_game_states
 	is_waiting_for_input = false
-	is_talking=true
+	resource = dialogue_resource
 	self.dialogue_line = await DialogueManager.get_next_dialogue_line(resource, title, temporary_game_states)
 
 
@@ -148,6 +145,7 @@ func get_responses() -> Array:
 	for child in responses_menu.get_children():
 		if "Disallowed" in child.name: continue
 		items.append(child)
+
 	return items
 
 
@@ -156,7 +154,7 @@ func get_responses() -> Array:
 
 func _on_mutation() -> void:
 	is_waiting_for_input = false
-	hide()
+	balloon.hide()
 
 
 func _on_response_mouse_entered(item: Control) -> void:
@@ -194,13 +192,3 @@ func _on_margin_resized() -> void:
 		balloon.size.y = 0
 		var viewport_size = balloon.get_viewport_rect().size
 		balloon.global_position = Vector2((viewport_size.x - balloon.size.x) * 0.5, viewport_size.y - balloon.size.y)
-func close_and_reset(start,temporary_game_states):
-	balloon.visible = false
-	await DialogueManager.get_next_dialogue_line(resource, start, temporary_game_states)
-
-func _on_dialogue_finished():
-	if rset_when_finish:
-		start(resource,"start")
-	else:
-		hide()
-		is_talking=false

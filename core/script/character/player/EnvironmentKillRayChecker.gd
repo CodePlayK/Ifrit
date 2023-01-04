@@ -8,12 +8,12 @@ func _ready():
 func _on_EnvironmentKillRayChecker_body_entered(body):
 	on_entered(body)
 	pass
- # Replace with function body.
+ 
 
 
 func _on_EnvironmentKillRayChecker_area_entered(area):
 	on_entered(area)
-	pass # Replace with function body.
+	pass 
 
 func on_entered(body):
 	print("伤害单位："+str(body.get_name()))

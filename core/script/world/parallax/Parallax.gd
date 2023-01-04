@@ -37,7 +37,7 @@ func _ready() -> void:
 	parallax_layers_speed.append(parallax_layer_speed_3)
 	parallax_layers_speed.append(parallax_layer_speed_4)
 	parallax_layers_speed.append(parallax_layer_speed_5)
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

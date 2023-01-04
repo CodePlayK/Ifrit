@@ -5,7 +5,7 @@ var on_player:bool=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,21 +20,26 @@ func _on_bedroom_change_bathroom_light_enegy(state) -> void:
 		energy=1.4
 	else :
 		energy=1.2
-	pass # Replace with function body.
+	pass
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	on_player=true
 	balloon.start(resource,"on_bathroom_light")
-	pass # Replace with function body.
+	pass
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	balloon.hide()
 	on_player=false
-	pass # Replace with function body.
+	pass
 
 
 func _on_visibility_changed() -> void:
 	EventBus.emit_signal("change_mirror",visible)
+	pass
+
+
+func _on_bedroom_change_bathroom_light(state) -> void:
+	visible=state
 	pass # Replace with function body.

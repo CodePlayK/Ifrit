@@ -26,12 +26,24 @@ extends Node2D
 @export var flame_wave_size_2:Vector2=Vector2(1,1.3)
 @export var routate_speed_2:float=.1
 
+@onready var player=$"%Player"
+@onready var bedroomMarker=$"bedroomMarker"
+@onready var corridorMarker=$"corridorMarker"
+@onready var chromatic= $ScreenEffect/chromatic
 #触碰哪一侧的界限(1=上，2=右，3=下，4=左)/复制哪一层的背景火焰颜色（0、1、2）/
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globle.current_room="trainingroom"
+	match Globle.last_room:
+		"bedroom":
+			player.set_position(Vector2(bedroomMarker.get_position().x,202.915))
+			EventBus.emit_signal("transition_show","LEFT_ENTER")
+			await EventBus.transition_complete
+		"corridor":
+			player.set_position(Vector2(corridorMarker.get_position().x,202.915))
+			EventBus.emit_signal("transition_show","RIGHT_ENTER")
 	change_background_flames()
-	pass # Replace with function body.
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -43,12 +55,7 @@ func _on_timer_timeout() -> void:
 	if !syn_setting:return
 	if equal_to_front:wave_center_color=wave_color_2
 	change_background_flames()
-	pass # Replace with function body.
-
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://core/scene/world/bedroom.tscn")
-	pass # Replace with function body.
+	pass
 
 func change_background_flames():
 	if equal_to_front:wave_center_color=wave_color_2
@@ -57,4 +64,8 @@ func change_background_flames():
 	EventBus.emit_signal("change_flames",flame_rotation_1,flame_wave_speed_1,flame_line_1,flame_wave_size_1,wave_color_1,"1",wave_center_color,routate_speed_1)
 	EventBus.emit_signal("change_flames",flame_rotation_2,flame_wave_speed_2,flame_line_2,flame_wave_size_2,wave_color_2,"2",wave_center_color,routate_speed_2)
 
-
+func _on_to_bedroom_body_entered(body: Node2D) -> void:
+	EventBus.emit_signal("transition_show","LEFT_LEFT")
+	await EventBus.transition_complete
+	EventBus.emit_signal("change_room","bedroom")
+	pass

@@ -5,7 +5,7 @@ extends Area2D
 var on_player:bool=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,15 +23,15 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	balloon.start(resource,"on_sleep_light")
 	on_player=true
-	pass # Replace with function body.
+	pass
 
 
 func _on_body_exited(body: Node2D) -> void:
 	on_player=false
 	balloon.hide()
-	pass # Replace with function body.
+	pass
 
 
 func _on_bedroom_change_sleep_light(state) -> void:
 	sleepLight.visible=state
-	pass # Replace with function body.
+	pass

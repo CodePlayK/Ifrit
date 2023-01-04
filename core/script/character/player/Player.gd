@@ -61,14 +61,14 @@ func player_is_dead():
 		set_position(start_position)
 
 func _on_world_change_state_ui():
-	pass # Replace with function body.
+	pass
 
 
 func _on_bedroom_player_enter_bathroom() -> void:
 	reflection.show()
-	pass # Replace with function body.
+	pass
 
 
 func _on_bedroom_player_leave_bathroom() -> void:
 	reflection.hide()
-	pass # Replace with function body.
+	pass
