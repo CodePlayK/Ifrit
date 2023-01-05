@@ -25,4 +25,3 @@ func physics_process(delta: float) -> BaseState:
 			return fall_state
 		else:
 			return lift_state
-	return null

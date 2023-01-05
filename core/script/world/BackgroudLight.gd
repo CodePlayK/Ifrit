@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_bedroom_change_background_light(state) -> void:
 	if state:
-		animator.play()
+		animator.play("light")
 	else:
 		animator.stop()
 		energy=0.1

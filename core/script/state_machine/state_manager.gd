@@ -57,6 +57,7 @@ func process(delta: float) -> void:
 	if Globle.player_movement_lcok:
 		on_player_lock()
 		return
+	on_player_unlock()
 	var new_state = current_state.process(delta)
 	if new_state:
 		change_state(new_state)
@@ -78,3 +79,6 @@ func _on_change_state_ui():
 
 func on_player_lock():
 		change_state($base/idle)
+		get_parent().set_collision_layer_value(2,false)
+func on_player_unlock():
+		get_parent().set_collision_layer_value(2,true)

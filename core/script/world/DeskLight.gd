@@ -5,7 +5,7 @@ extends PointLight2D
 var on_player:bool=false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass 
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,16 +20,16 @@ func _process(delta: float) -> void:
 
 func _on_bedroom_change_desk_light(state) -> void:
 	visible=state
-	pass 
+	pass
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	on_player=true
 	balloon.start(resource,"on_desk_light")
-	pass 
+	pass
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	on_player=false
 	balloon.hide()
-	pass 
+	pass

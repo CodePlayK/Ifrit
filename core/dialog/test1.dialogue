@@ -55,3 +55,6 @@
 ~ on_to_corridor
 要进入走廊吗？
 => END
+~ play_cutscene
+要播放过场吗？
+=> END

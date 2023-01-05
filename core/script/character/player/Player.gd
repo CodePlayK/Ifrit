@@ -28,6 +28,8 @@ var start_position
 
 
 func _ready() -> void:
+	EventBus.connect("change_player_position",Callable(self,"_on_change_player_position"))
+	EventBus.connect("change_player_visiable",Callable(self,"_on_change_player_visiable"))
 	start_position=get_position()
 	states.init(self)
 	reflection.hide()
@@ -71,4 +73,11 @@ func _on_bedroom_player_enter_bathroom() -> void:
 
 func _on_bedroom_player_leave_bathroom() -> void:
 	reflection.hide()
+	pass
+
+func _on_change_player_position(player_position) -> void:
+	set_position(player_position)
+	pass
+func _on_change_player_visiable(state) -> void:
+	visible=state
 	pass

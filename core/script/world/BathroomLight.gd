@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_bedroom_change_bathroom_light_enegy(state) -> void:
+func _on_bedroom_change_bathroom_light_energy(state) -> void:
 	if state:
 		energy=1.4
 	else :

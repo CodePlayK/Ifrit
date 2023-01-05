@@ -12,6 +12,9 @@ var last_room:String
 var bedroom_light_state:bool
 var player_movement_lcok:bool=false
 
+var current_cutscene:String
+var playing_cutscene:bool=false
+
 func _ready():
 	EventBus.connect("change_room",Callable(self,"_on_change_room"))
 	pass

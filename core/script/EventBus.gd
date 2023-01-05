@@ -9,7 +9,7 @@ signal change_logo_light(state)
 signal change_desk_light(state)
 signal change_background_light(state)
 signal change_bathroom_light(state)
-signal change_bathroom_light_enegy(state)
+signal change_bathroom_light_energy(state)
 signal change_worldEnvironment_exposure_white(expose,white)
 signal change_mirror(state)
 signal change_mirror_mix_value(state)
@@ -24,10 +24,13 @@ signal clear_result()
 signal change_room(room)
 signal transition_show(room)
 signal transition_complete()
+signal change_player_position(x)
+signal change_player_visiable(state)
 
 
 
 #cutscene
 signal bedroom_play_cutscene(sceneNum)
+signal cutscene_finished()
 
 

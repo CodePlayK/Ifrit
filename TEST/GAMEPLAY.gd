@@ -44,8 +44,8 @@ func _ready() -> void:
 
 func make_flames(routate_range:Vector2,wave_speed,line,y_scale,color,layer):
 	var flame = poly_flame.instantiate()
-	var rotate=randf_range(routate_range.x, routate_range.y)
-	flame.set_rotation_degrees(rotate)
+	var flame_rotate=randf_range(routate_range.x, routate_range.y)
+	flame.set_rotation_degrees(flame_rotate)
 	flame.get_node("sprit").material.set_shader_parameter("wave_speed",wave_speed)
 	flame.get_node("sprit").material.set_shader_parameter("line",line)
 	flame.get_node("sprit").material.set_shader_parameter("color",Vector4(color.r,color.g,color.b,color.a))
@@ -107,7 +107,7 @@ func _on_burst_flame_wave(side,copy_layer):
 	var burst_vec=Vector2.ZERO
 	var layer
 	var color
-	var color1:Color
+	var color1
 	#四边有效象限
 	match side:
 		1:

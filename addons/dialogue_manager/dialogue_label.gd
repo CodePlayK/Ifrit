@@ -64,7 +64,7 @@ func reset_height() -> void:
 	var size_check_label = duplicate(DUPLICATE_USE_INSTANTIATION)
 	size_check_label.modulate.a = 0
 	get_tree().current_scene.add_child(size_check_label)
-	size_check_label.size = Vector2(size.x, 0)
+	size_check_label.set_deferred("size",Vector2(size.x, 0))
 
 	if start_with_full_height:
 		# Give the size check a chance to resize

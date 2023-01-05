@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://caeqciddh4mb0"]
+[gd_scene load_steps=112 format=3 uid="uid://caeqciddh4mb0"]
 
 [ext_resource type="Texture2D" uid="uid://cjtw1oh8a6tjo" path="res://core/resource/world/bedroom/bedroom.png" id="1_nd1w2"]
 [ext_resource type="Script" path="res://core/script/world/bedroom.gd" id="1_ohdqg"]
@@ -29,6 +29,7 @@
 [ext_resource type="FontFile" uid="uid://dukajabaq32vu" path="res://core/resource/font/FFFFORWA.TTF" id="24_na73m"]
 [ext_resource type="Texture2D" uid="uid://0huri75q2xep" path="res://core/resource/world/bedroom/light mask/3.png" id="26_q2kh1"]
 [ext_resource type="Texture2D" uid="uid://dvopnr60cv1bf" path="res://core/resource/world/bedroom/light mask/7.png" id="28_5lw1p"]
+[ext_resource type="Script" path="res://core/script/character/npc/doctor.gd" id="30_5ey0d"]
 [ext_resource type="Material" uid="uid://qwjrdhvdk0sc" path="res://shader/wave.tres" id="30_xm0o4"]
 [ext_resource type="Texture2D" uid="uid://di33kctvdxbfj" path="res://core/resource/world/bedroom/light mask/SLEEPLIGHT.png" id="32_38qbr"]
 [ext_resource type="PackedScene" uid="uid://by1nhv0m25ov8" path="res://core/scene/common/transation.tscn" id="32_pjn0d"]
@@ -36,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://chyuui4qtstj8" path="res://core/scene/character/npc/doctor.tscn" id="33_dp1bc"]
 [ext_resource type="Script" path="res://core/script/world/bedroom/cutscene/cutscene.gd" id="34_6m724"]
 [ext_resource type="SpriteFrames" uid="uid://cswephwqgsgfl" path="res://core/resource/character/player/Player_Skin_Blue.tres" id="36_wujif"]
+[ext_resource type="Script" path="res://core/script/world/bedroom/cutscene/0_0_wake_ifrit_up.gd" id="37_pr7vq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ftc6o"]
 shader = ExtResource("2_pihcr")
@@ -671,7 +673,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_xrsgq"]
-resource_name = "新建动画"
+resource_name = "light"
 length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -684,20 +686,20 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.2, 0.4, 0.1]
+"values": [0.2, 0.3, 0.1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yqxyy"]
 _data = {
 "RESET": SubResource("Animation_1jibe"),
-"新建动画": SubResource("Animation_xrsgq")
+"light": SubResource("Animation_xrsgq")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25plf"]
-size = Vector2(155.868, 69.387)
+size = Vector2(96.2662, 69.387)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qekfp"]
-size = Vector2(43.5558, 15.3189)
+size = Vector2(24.3688, 15.3189)
 
 [sub_resource type="Animation" id="Animation_oseey"]
 length = 0.001
@@ -1911,6 +1913,50 @@ shadow_offset = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05ce4"]
 size = Vector2(130.557, 152.583)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_75kfk"]
+atlas = ExtResource("33_4o142")
+region = Rect2(440, 128, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjf7q"]
+atlas = ExtResource("33_4o142")
+region = Rect2(400, 128, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kegnn"]
+atlas = ExtResource("33_4o142")
+region = Rect2(400, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_io8ir"]
+atlas = ExtResource("33_4o142")
+region = Rect2(360, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6ujk"]
+atlas = ExtResource("33_4o142")
+region = Rect2(320, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sop35"]
+atlas = ExtResource("33_4o142")
+region = Rect2(280, 0, 40, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuq0h"]
+atlas = ExtResource("33_4o142")
+region = Rect2(240, 0, 40, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2i67"]
+animations = [{
+"frames": [SubResource("AtlasTexture_75kfk"), SubResource("AtlasTexture_fjf7q")],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [SubResource("AtlasTexture_kegnn"), SubResource("AtlasTexture_io8ir"), SubResource("AtlasTexture_i6ujk"), SubResource("AtlasTexture_sop35"), SubResource("AtlasTexture_tuq0h")],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a21o"]
+size = Vector2(31.432, 75.6604)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljo8k"]
 texture = ExtResource("1_nd1w2")
 0:0/0 = 0
@@ -2612,54 +2658,18 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vp03"]
-size = Vector2(28.8749, 14)
+size = Vector2(18.9955, 14)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8aaa1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_75kfk"]
-atlas = ExtResource("33_4o142")
-region = Rect2(440, 128, 40, 128)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7qdi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fjf7q"]
-atlas = ExtResource("33_4o142")
-region = Rect2(400, 128, 40, 128)
+[sub_resource type="Animation" id="Animation_c4aec"]
+length = 0.001
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kegnn"]
-atlas = ExtResource("33_4o142")
-region = Rect2(400, 0, 40, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_io8ir"]
-atlas = ExtResource("33_4o142")
-region = Rect2(360, 0, 40, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i6ujk"]
-atlas = ExtResource("33_4o142")
-region = Rect2(320, 0, 40, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sop35"]
-atlas = ExtResource("33_4o142")
-region = Rect2(280, 0, 40, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuq0h"]
-atlas = ExtResource("33_4o142")
-region = Rect2(240, 0, 40, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_d2i67"]
-animations = [{
-"frames": [SubResource("AtlasTexture_75kfk"), SubResource("AtlasTexture_fjf7q")],
-"loop": true,
-"name": &"idle",
-"speed": 2.0
-}, {
-"frames": [SubResource("AtlasTexture_kegnn"), SubResource("AtlasTexture_io8ir"), SubResource("AtlasTexture_i6ujk"), SubResource("AtlasTexture_sop35"), SubResource("AtlasTexture_tuq0h")],
-"loop": true,
-"name": &"walk",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_kex4n"]
-resource_name = "wake_ifrit_1"
-length = 3.0
+[sub_resource type="Animation" id="Animation_dgww1"]
+resource_name = "wake_ifrit_0"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2667,10 +2677,74 @@ tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"walk", &"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"walk"]
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(447.792, 149.368), Vector2(240.11, 149.368)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%doctor/../../../cutscene/ifrit:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"empty"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_kex4n"]
+resource_name = "wake_ifrit_1"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"walk", &"idle"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2697,9 +2771,9 @@ tracks/2/keys = {
 "values": [Vector2(240.11, 149.368), Vector2(41.7149, 149.368)]
 }
 
-[sub_resource type="Animation" id="Animation_dgww1"]
-resource_name = "wake_ifrit_0"
-length = 3.0
+[sub_resource type="Animation" id="Animation_pqr3v"]
+resource_name = "wake_ifrit_2"
+length = 1.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2707,7 +2781,7 @@ tracks/0/path = NodePath(".:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.3),
+"times": PackedFloat32Array(0, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"walk", &"idle"]
@@ -2719,10 +2793,10 @@ tracks/1/path = NodePath(".:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false]
+"values": [true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2731,19 +2805,19 @@ tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.3),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(447.792, 149.368), Vector2(240.11, 149.368)]
+"values": [Vector2(41.7149, 149.368), Vector2(86.5489, 149.368)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6kb67"]
 _data = {
+"RESET": SubResource("Animation_c4aec"),
 "wake_ifrit_0": SubResource("Animation_dgww1"),
-"wake_ifrit_1": SubResource("Animation_kex4n")
+"wake_ifrit_1": SubResource("Animation_kex4n"),
+"wake_ifrit_2": SubResource("Animation_pqr3v")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7qdi"]
 
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("1_ohdqg")
@@ -2773,12 +2847,11 @@ script = ExtResource("18_a07gi")
 
 [node name="Player" parent="." instance=ExtResource("2_jnqi5")]
 unique_name_in_owner = true
-visible = false
 modulate = Color(0.941176, 0.941176, 0.941176, 1)
 light_mask = 3
 z_index = 21
 texture_filter = 1
-position = Vector2(73.5798, 200.974)
+position = Vector2(474.339, 200.733)
 collision_mask = 269
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
@@ -2867,7 +2940,6 @@ script = ExtResource("8_eu4rt")
 metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Light/BackgroudLight"]
-autoplay = "新建动画"
 playback_speed = 0.3
 libraries = {
 "": SubResource("AnimationLibrary_yqxyy")
@@ -2901,17 +2973,17 @@ region_enabled = true
 region_rect = Rect2(388, 120, 9, 9)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light/BedroomSwitch"]
-position = Vector2(-118.481, 1190.15)
+position = Vector2(-148.282, 1190.15)
 shape = SubResource("RectangleShape2D_25plf")
 
 [node name="BathroomSwitch" type="Area2D" parent="Light"]
 z_index = 2
-position = Vector2(-102.4, -20.7203)
+position = Vector2(-102.066, -20.7203)
 scale = Vector2(0.834236, 0.813894)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Light/BathroomSwitch"]
-position = Vector2(111.99, 207.13)
+position = Vector2(112.764, 207.13)
 shape = SubResource("RectangleShape2D_qekfp")
 
 [node name="outline" type="Sprite2D" parent="Light/BathroomSwitch"]
@@ -2951,6 +3023,7 @@ energy = 0.82
 range_item_cull_mask = 2048
 texture = ExtResource("16_xn0vt")
 script = ExtResource("17_36mqe")
+metadata/_edit_lock_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Light/TextHeighlight"]
 libraries = {
@@ -3178,6 +3251,7 @@ texture = ExtResource("24_bxesw")
 offset = Vector2(22.1745, 169.364)
 texture_scale = 0.27
 script = ExtResource("15_ikj5h")
+metadata/_edit_lock_ = true
 
 [node name="MainLight" type="PointLight2D" parent="Parallax/ParallaxLayer_2/bedroom_bathroom"]
 unique_name_in_owner = true
@@ -3201,7 +3275,7 @@ libraries = {
 
 [node name="Label" type="Label" parent="Parallax/ParallaxLayer_2/bedroom_bathroom"]
 light_mask = 2051
-z_index = 15
+z_index = 11
 offset_left = 64.857
 offset_top = -30.2878
 offset_right = 148.857
@@ -3222,18 +3296,17 @@ autostart = true
 [node name="DeskLight" type="PointLight2D" parent="Parallax/ParallaxLayer_2"]
 visible = false
 light_mask = 2048
-position = Vector2(215.472, 146.514)
+position = Vector2(209.882, 146.514)
 scale = Vector2(0.294299, 0.297707)
 color = Color(1, 0.698039, 0.498039, 1)
 energy = 0.28
 range_z_max = 21
 texture = ExtResource("28_5lw1p")
 script = ExtResource("16_uy2ig")
-metadata/_edit_group_ = true
 
 [node name="DeskLightBackground" type="PointLight2D" parent="Parallax/ParallaxLayer_2/DeskLight"]
 light_mask = 2049
-position = Vector2(16.1132, 80.6895)
+position = Vector2(-3.16336, 82.0907)
 scale = Vector2(0.603031, 0.662432)
 color = Color(1, 0.698039, 0.498039, 1)
 range_z_max = 24
@@ -3267,6 +3340,23 @@ tile_set = SubResource("TileSet_43l1y")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131075, 393216, 21, -65539, 393216, 22, -3, 393216, 23, -131074, 458752, 21, -65538, 458752, 22, -2, 458752, 23, -131073, 524288, 21, -65537, 524288, 22, -1, 524288, 23, -196608, 589824, 21, -131072, 589824, 22, -65536, 589824, 23, -196607, 655360, 21, -131071, 655360, 22, -65535, 655360, 23, -196606, 720896, 21, -131070, 720896, 22, -65534, 720896, 23, -262138, 786432, 23, -196602, 786432, 24, -131066, 786432, 25, -65530, 786432, 26, -262137, 851968, 23, -196601, 851968, 24, -131065, 851968, 25, -65529, 851968, 26, -262136, 917504, 23, -196600, 917504, 24, -131064, 917504, 25, -65528, 917504, 26, -262135, 983040, 23, -196599, 983040, 24, -131063, 983040, 25, -65527, 983040, 26, -262134, 1048576, 23, -196598, 1048576, 24, -131062, 1048576, 25, -65526, 1048576, 26, -262133, 1114112, 23, -196597, 1114112, 24, -131061, 1114112, 25, -65525, 1114112, 26)
 
+[node name="doctor" type="AnimatedSprite2D" parent="Parallax/ParallaxLayer_3"]
+unique_name_in_owner = true
+z_index = 22
+position = Vector2(395.599, 149.368)
+frames = SubResource("SpriteFrames_d2i67")
+animation = &"idle"
+playing = true
+
+[node name="Area2D" type="Area2D" parent="Parallax/ParallaxLayer_3/doctor"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("30_5ey0d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_3/doctor/Area2D"]
+position = Vector2(-5.60043, 24.8635)
+shape = SubResource("RectangleShape2D_7a21o")
+
 [node name="ParallaxLayer_4" type="Node2D" parent="Parallax"]
 
 [node name="bedroom" type="TileMap" parent="Parallax/ParallaxLayer_4"]
@@ -3285,6 +3375,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(65538, 1572864, 22, 131074, 1572864, 23, 196610, 1572864, 23, 262146, 1572864, 24, 262158, 1769472, 24, 196622, 1769472, 23, 131086, 1769472, 23, 65550, 1769472, 22, 262147, 1638400, 24, 262148, 1703936, 24, 262149, 1638400, 24, 262150, 1703936, 24, 262151, 1638400, 24, 262152, 1703936, 24, 262153, 1638400, 24, 262154, 1703936, 24, 262155, 1638400, 24, 262156, 1703936, 24, 262157, 1638400, 24)
 
 [node name="ParallaxLayer_5" type="Node2D" parent="Parallax"]
+position = Vector2(-61.6107, 0)
 
 [node name="SleepLight2" type="Area2D" parent="Parallax/ParallaxLayer_5"]
 z_index = 17
@@ -3312,7 +3403,7 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Parallax/ParallaxLayer_5/SleepLight2"]
 z_index = 1
-position = Vector2(78.6785, 196.215)
+position = Vector2(78.2054, 196.215)
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_8vp03")
 
@@ -3374,7 +3465,7 @@ layer = 101
 
 [node name="Camera2D" type="Camera2D" parent="."]
 material = SubResource("ShaderMaterial_8aaa1")
-position = Vector2(75.8298, 133.474)
+position = Vector2(476.589, 133.233)
 scale = Vector2(0.9, 0.9)
 current = true
 limit_left = -200
@@ -3393,36 +3484,41 @@ position = Vector2(405.422, 148.148)
 [node name="cutscene" type="Node" parent="."]
 script = ExtResource("34_6m724")
 
-[node name="doctor" type="AnimatedSprite2D" parent="cutscene"]
-z_index = 22
-position = Vector2(447.792, 149.368)
-frames = SubResource("SpriteFrames_d2i67")
-animation = &"walk"
+[node name="ifrit" type="AnimatedSprite2D" parent="cutscene"]
+unique_name_in_owner = true
+light_mask = 3
+z_index = 23
+material = SubResource("ShaderMaterial_a7qdi")
+position = Vector2(53.8657, 149.594)
+scale = Vector2(0.8, 0.8)
+frames = ExtResource("36_wujif")
+animation = &"empty"
 playing = true
 
-[node name="aniplayer" type="AnimationPlayer" parent="cutscene"]
-root_node = NodePath("../doctor")
+[node name="0_0_wake_ifrit_up" type="Node" parent="cutscene"]
+script = ExtResource("37_pr7vq")
+
+[node name="aniplayer" type="AnimationPlayer" parent="cutscene/0_0_wake_ifrit_up"]
+root_node = NodePath("../../../Parallax/ParallaxLayer_3/doctor")
 libraries = {
 "": SubResource("AnimationLibrary_6kb67")
 }
 
-[node name="Timer" type="Timer" parent="cutscene"]
+[node name="Timer" type="Timer" parent="cutscene/0_0_wake_ifrit_up"]
 one_shot = true
-autostart = true
 
-[node name="ifrit" type="AnimatedSprite2D" parent="cutscene"]
-light_mask = 3
-z_index = 23
-material = SubResource("ShaderMaterial_a7qdi")
-position = Vector2(47.1192, 154.356)
-scale = Vector2(0.9, 0.9)
-frames = ExtResource("36_wujif")
-animation = &"idle"
-playing = true
+[node name="0_0_camera_start" type="Marker2D" parent="cutscene/0_0_wake_ifrit_up"]
+z_index = 100
+position = Vector2(86.7483, 171.444)
+gizmo_extents = 21.7
+
+[node name="0_0_palyer_end" type="Marker2D" parent="cutscene/0_0_wake_ifrit_up"]
+z_index = 100
+position = Vector2(138.596, 184.186)
+gizmo_extents = 21.7
 
 [connection signal="change_background_light" from="." to="Light/BackgroudLight" method="_on_bedroom_change_background_light"]
 [connection signal="change_bathroom_light" from="." to="Parallax/ParallaxLayer_2/bedroom_bathroom/BathroomLight" method="_on_bedroom_change_bathroom_light"]
-[connection signal="change_bathroom_light_enegy" from="." to="Parallax/ParallaxLayer_2/bedroom_bathroom/BathroomLight" method="_on_bedroom_change_bathroom_light_enegy"]
 [connection signal="change_desk_light" from="." to="Parallax/ParallaxLayer_2/DeskLight" method="_on_bedroom_change_desk_light"]
 [connection signal="change_heighlight" from="." to="Light/HeighLight" method="_on_bedroom_change_heighlight"]
 [connection signal="change_logo_light" from="." to="Parallax/ParallaxLayer_0/LogoLight" method="_on_bedroom_change_logo_light"]
@@ -3431,6 +3527,7 @@ playing = true
 [connection signal="change_mirror_mix_value" from="." to="Parallax/ParallaxLayer_1/reflection" method="_on_bedroom_change_mirror_mix_value"]
 [connection signal="change_sleep_light" from="." to="Parallax/ParallaxLayer_5/SleepLight2" method="_on_bedroom_change_sleep_light"]
 [connection signal="change_worldEnvironment_exposure_white" from="." to="WorldEnvironment" method="_on_bedroom_change_world_environment_exposure_white"]
+[connection signal="cutscene_finished" from="." to="Player" method="_on_bedroom_cutscene_finished"]
 [connection signal="player_enter_bathroom" from="." to="Player" method="_on_bedroom_player_enter_bathroom"]
 [connection signal="player_leave_bathroom" from="." to="Player" method="_on_bedroom_player_leave_bathroom"]
 [connection signal="body_entered" from="DefaultLayer/bedroomTileMap/toTrainingroom" to="." method="_on_sprite_2d_body_entered"]
@@ -3448,8 +3545,10 @@ playing = true
 [connection signal="timeout" from="Parallax/ParallaxLayer_2/bedroom_bathroom/Label/Timer" to="Parallax/ParallaxLayer_2/bedroom_bathroom/Label" method="_on_timer_timeout"]
 [connection signal="body_entered" from="Parallax/ParallaxLayer_2/DeskLight/Area2D" to="Parallax/ParallaxLayer_2/DeskLight" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Parallax/ParallaxLayer_2/DeskLight/Area2D" to="Parallax/ParallaxLayer_2/DeskLight" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Parallax/ParallaxLayer_3/doctor/Area2D" to="Parallax/ParallaxLayer_3/doctor/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Parallax/ParallaxLayer_3/doctor/Area2D" to="Parallax/ParallaxLayer_3/doctor/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2" method="_on_body_entered"]
 [connection signal="body_entered" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2/outline" method="_on_sleep_light_2_body_entered"]
 [connection signal="body_exited" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2" method="_on_body_exited"]
 [connection signal="body_exited" from="Parallax/ParallaxLayer_5/SleepLight2" to="Parallax/ParallaxLayer_5/SleepLight2/outline" method="_on_sleep_light_2_body_exited"]
-[connection signal="timeout" from="cutscene/Timer" to="cutscene" method="_on_timer_timeout"]
+[connection signal="timeout" from="cutscene/0_0_wake_ifrit_up/Timer" to="cutscene" method="_on_timer_timeout"]

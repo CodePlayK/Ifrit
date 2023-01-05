@@ -38,7 +38,6 @@ func _ready() -> void:
 		"bedroom":
 			player.set_position(Vector2(bedroomMarker.get_position().x,202.915))
 			EventBus.emit_signal("transition_show","LEFT_ENTER")
-			await EventBus.transition_complete
 		"corridor":
 			player.set_position(Vector2(corridorMarker.get_position().x,202.915))
 			EventBus.emit_signal("transition_show","RIGHT_ENTER")
@@ -68,4 +67,3 @@ func _on_to_bedroom_body_entered(body: Node2D) -> void:
 	EventBus.emit_signal("transition_show","LEFT_LEFT")
 	await EventBus.transition_complete
 	EventBus.emit_signal("change_room","bedroom")
-	pass

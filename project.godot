@@ -110,7 +110,6 @@ missing_translations_are_errors=false
 
 window/size/viewport_width=360
 window/size/viewport_height=202
-window/size/always_on_top=true
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"

@@ -62,11 +62,11 @@ func after_physics_process(delta: float)->BaseState:
 	return null
 
 
-func player_faced(move):
-	if move < 0:
+func player_faced(moves):
+	if moves < 0:
 		player.animations.flip_h = false
 		player.reflection.flip_h = false
-	elif move > 0:
+	elif moves > 0:
 		player.animations.flip_h = true
 		player.reflection.flip_h = true
 func apply_gravity(delta):
@@ -83,7 +83,6 @@ func apply_climb_acceleration_y(delta):
 func apply_climb_acceleration_x(delta):
 	player.velocity.x=move_toward(player.velocity.x,-player.max_speed_run,player.climb_speed*delta)
 func min_jump_force(velocity,delta)->Vector2:
-	var old_velocity=velocity
 	if velocity.y<-player.min_jump_fource and velocity.y<0 and Input.is_action_just_released("jump"):
 		velocity.y=-player.jump_speed/player.click_jump_force_limit
 	return velocity

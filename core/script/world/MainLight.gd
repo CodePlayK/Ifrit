@@ -42,5 +42,5 @@ func _on_visibility_changed() -> void:
 	EventBus.emit_signal("change_logo_light",!visible)
 	EventBus.emit_signal("change_desk_light",!visible)
 	EventBus.emit_signal("change_background_light",visible)
-	EventBus.emit_signal("change_bathroom_light_enegy",visible)
+	EventBus.emit_signal("change_bathroom_light_energy",visible)
 	pass
